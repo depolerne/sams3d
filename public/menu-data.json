@@ -1,0 +1,121 @@
+{
+  "categories": [
+    {
+      "id": "all",
+      "name": "All",
+      "items": [
+        {
+          "id": "salad-1",
+          "name": "Special Salad",
+          "description": "Classic Salad with meat",
+          "price": "10 AZN",
+          "modelPath": "/models/cocktail-martini.obj",
+          "mtlPath": "/models/textures/cocktail-martini/cocktail-martini.mtl",
+          "category": "salads"
+        },
+        {
+          "id": "cocktail-1",
+          "name": "Blue Martini",
+          "description": "Классический мартини с голубым оттенком",
+          "price": "15 AZN",
+          "modelPath": "/models/cocktail-blue.obj",
+          "mtlPath": "/models/textures/cocktail-blue/cocktail-blue.mtl",
+          "category": "drinks"
+        },
+        {
+          "id": "cocktail-2",
+          "name": "Classic Martini",
+          "description": "Элегантный классический мартини",
+          "price": "12 AZN",
+          "modelPath": "/models/cocktail-martini.obj",
+          "mtlPath": "/models/textures/cocktail-martini/cocktail-martini.mtl",
+          "category": "drinks"
+        },
+        {
+          "id": "wine-1",
+          "name": "Premium Wine",
+          "description": "Изысканное красное вино",
+          "price": "25 AZN",
+          "modelPath": "/models/wine-glass.obj",
+          "mtlPath": "/models/textures/wine-glass/wine-glass.mtl",
+          "category": "drinks"
+        },
+        {
+          "id": "steak-1",
+          "name": "Neon Steak",
+          "description": "Сочный стейк с неоновой презентацией",
+          "price": "35 AZN",
+          "modelPath": "/models/steak-plate.obj",
+          "mtlPath": "/models/textures/steak-plate/steak-plate.mtl",
+          "category": "food"
+        },
+        {
+          "id": "sushi-1",
+          "name": "Glow Sushi",
+          "description": "Светящиеся суши с премиальными ингредиентами",
+          "price": "20 AZN",
+          "modelPath": "/models/sushi-plate.obj",
+          "mtlPath": "/models/textures/sushi-plate/sushi-plate.mtl",
+          "category": "food"
+        },
+        {
+          "id": "cake-1",
+          "name": "Cyber Cake",
+          "description": "Футуристический торт с голографическими элементами",
+          "price": "18 AZN",
+          "modelPath": "/models/cake.obj",
+          "mtlPath": "/models/textures/cake/cake.mtl",
+          "category": "desserts"
+        }
+      ]
+    },
+    {
+      "id": "salads",
+      "name": "Salads",
+      "items": [
+        {
+          "id": "salad-1",
+          "name": "Special Salad",
+          "description": "Classic Salad with meat",
+          "price": "10 AZN",
+          "modelPath": "/models/cocktail-martini.obj",
+          "mtlPath": "/models/textures/cocktail-martini/cocktail-martini.mtl",
+          "category": "salads"
+        }
+      ]
+    },
+    {
+      "id": "drinks",
+      "name": "Drinks",
+      "items": [
+        {
+          "id": "cocktail-1",
+          "name": "Blue Martini",
+          "description": "Классический мартини с голубым оттенком",
+          "price": "15 AZN",
+          "modelPath": "/models/cocktail-blue.obj",
+          "mtlPath": "/models/textures/cocktail-blue/cocktail-blue.mtl",
+          "category": "drinks"
+        },
+        {
+          "id": "cocktail-2",
+          "name": "Classic Martini",
+          "description": "Элегантный классический мартини",
+          "price": "12 AZN",
+          "modelPath": "/models/cocktail-martini.obj",
+          "mtlPath": "/models/textures/cocktail-martini/cocktail-martini.mtl",
+          "category": "drinks"
+        },
+        {
+          "id": "wine-1",
+          "name": "Premium Wine",
+          "description": "Изысканное красное вино",
+          "price": "25 AZN",
+          "modelPath": "/models/wine-glass.obj",
+          "mtlPath": "/models/textures/wine-glass/wine-glass.mtl",
+          "category": "drinks"
+        }
+      ]
+    }
+  ]
+}
