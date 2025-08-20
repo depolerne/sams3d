@@ -5,67 +5,527 @@
       "name": "All",
       "items": [
         {
-          "id": "salad-1",
-          "name": "Special Salad",
-          "description": "Classic Salad with meat",
-          "price": "10 AZN",
-          "modelPath": "/models/cocktail-martini.obj",
-          "mtlPath": "/models/textures/cocktail-martini/cocktail-martini.mtl",
+          "id": "chicken-popcorn-salad",
+          "name": "Chicken Popcorn Salad",
+          "description": "Iceberg lettuce, tomatoes, cucumber, mixed greens, chicken popcorns, special sauce",
+          "price": "15 AZN",
+          "modelPath": "/models/salad_toyuq.obj",
+          "mtlPath": "/models/textures/salads/salad_toyuq/salad_toyuq.mtl",
           "category": "salads"
         },
         {
-          "id": "cocktail-1",
-          "name": "Blue Martini",
-          "description": "Классический мартини с голубым оттенком",
+          "id": "salad-caesar",
+          "name": "Classic Caesar with Chicken",
+          "description": "Iceberg lettuce, breadcrumbs, chicken, caesar sauce, cherry tomatoes, parmesan cheese",
+          "price": "11 AZN",
+          "modelPath": "/models/salad_caesar.obj",
+          "mtlPath": "/models/textures/salads/salad_caesar/salad_caesar.mtl",
+          "category": "salads"
+        },
+        {
+          "id": "salad-caesar-with-shrimps",
+          "name": "Salad Caesar with Shrimps",
+          "description": "Iceberg lettuce, breadcrumbs, caesar sauce, cherry tomatoes, parmesan cheese, shrimps",
           "price": "15 AZN",
-          "modelPath": "/models/cocktail-blue.obj",
-          "mtlPath": "/models/textures/cocktail-blue/cocktail-blue.mtl",
-          "category": "drinks"
+          "modelPath": "/models/salad_caesar_shrimps.obj",
+          "mtlPath": "/models/textures/salads/salad_caesar_shrimps/salad_caesar_shrimps.mtl",
+          "category": "salads"
         },
         {
-          "id": "cocktail-2",
-          "name": "Classic Martini",
-          "description": "Элегантный классический мартини",
+          "id": "chicken-salad",
+          "name": "Chicken Salad",
+          "description": "Iceberg lettuce, tomatoes, cucumber, lettuce, garlic, onion rings, cabbage, chicken, special sauce",
+          "price": "14 AZN",
+          "modelPath": "/models/chicken_salad.obj",
+          "mtlPath": "/models/textures/salads/chicken_salad/chicken_salad.mtl",
+          "category": "salads"
+        },
+        {
+          "id": "cheese-salad",
+          "name": "Cheese Salad",
+          "description": "Tomatoes, cucumber, red pepper, green pepper, iceberg lettuce, red cabbage, lettuce, egg",
+          "price": "11 AZN",
+          "modelPath": "/models/cheese_salad.obj",
+          "mtlPath": "/models/textures/salads/cheese_salad/cheese_salad.mtl",
+          "category": "salads"
+        },
+        {
+          "id": "shrimp-popcorn",
+          "name": "Shrimp Popcorn",
+          "description": "Iceberg lettuce, tomatoes, cucumber, mixed greens, shrimps popcorn, special sauce",
+          "price": "17 AZN",
+          "modelPath": "/models/shrimp_popcorn.obj",
+          "mtlPath": "/models/textures/snacks/shrimp_popcorn/shrimp_popcorn.mtl",
+          "category": "salads"
+        },
+        {
+          "id": "tuna-salad",
+          "name": "Tuna Salad",
+          "description": "Tuna, tomatoes, cucumber, lettuce, egg, corn, olives, special sauce",
+          "price": "15 AZN",
+          "modelPath": "/models/tuna_salad.obj",
+          "mtlPath": "/models/textures/salads/tuna_salad/tuna_salad.mtl",
+          "category": "salads"
+        },
+        {
+          "id": "salad-avocado-shrimps",
+          "name": "Salad Avocado with Shrimps",
+          "description": "Avocado, tomatoes, cucumber, lettuce, shrimps, parmesan cheese, special sauce",
+          "price": "17 AZN",
+          "modelPath": "/models/salad_avocado_shrimps.obj",
+          "mtlPath": "/models/textures/salads/salad_avocado_shrimps/salad_avocado_shrimps.mtl",
+          "category": "salads"
+        },
+        {
+          "id": "pasta-fettuccine",
+          "name": "Fettuccine",
+          "description": "Fettuccine pasta with creamy sauce",
           "price": "12 AZN",
-          "modelPath": "/models/cocktail-martini.obj",
-          "mtlPath": "/models/textures/cocktail-martini/cocktail-martini.mtl",
-          "category": "drinks"
+          "modelPath": "/models/pasta_fettuccine.obj",
+          "mtlPath": "/models/textures/pasta/pasta_fettuccine/pasta_fettuccine.mtl",
+          "category": "pasta"
         },
         {
-          "id": "wine-1",
-          "name": "Premium Wine",
-          "description": "Изысканное красное вино",
-          "price": "25 AZN",
-          "modelPath": "/models/wine-glass.obj",
-          "mtlPath": "/models/textures/wine-glass/wine-glass.mtl",
-          "category": "drinks"
+          "id": "pasta-meat",
+          "name": "Pasta with Meat",
+          "description": "Pasta with meat sauce",
+          "price": "14 AZN",
+          "modelPath": "/models/pasta_meat.obj",
+          "mtlPath": "/models/textures/pasta/pasta_meat/pasta_meat.mtl",
+          "category": "pasta"
         },
         {
-          "id": "steak-1",
-          "name": "Neon Steak",
-          "description": "Сочный стейк с неоновой презентацией",
-          "price": "35 AZN",
-          "modelPath": "/models/steak-plate.obj",
-          "mtlPath": "/models/textures/steak-plate/steak-plate.mtl",
-          "category": "food"
+          "id": "noodles-chicken",
+          "name": "Noodles with Chicken",
+          "description": "Noodles with chicken and vegetables",
+          "price": "13 AZN",
+          "modelPath": "/models/noodles_chicken.obj",
+          "mtlPath": "/models/textures/noodles/noodles_chicken/noodles_chicken.mtl",
+          "category": "noodles"
         },
         {
-          "id": "sushi-1",
-          "name": "Glow Sushi",
-          "description": "Светящиеся суши с премиальными ингредиентами",
-          "price": "20 AZN",
-          "modelPath": "/models/sushi-plate.obj",
-          "mtlPath": "/models/textures/sushi-plate/sushi-plate.mtl",
-          "category": "food"
+          "id": "noodles-shrimps",
+          "name": "Noodles with Shrimps",
+          "description": "Noodles with shrimps and vegetables",
+          "price": "15 AZN",
+          "modelPath": "/models/noodles_shrimps.obj",
+          "mtlPath": "/models/textures/noodles/noodles_shrimps/noodles_shrimps.mtl",
+          "category": "noodles"
         },
         {
-          "id": "cake-1",
-          "name": "Cyber Cake",
-          "description": "Футуристический торт с голографическими элементами",
+          "id": "pizza-margarita",
+          "name": "Pizza Margarita",
+          "description": "Classic margarita pizza with tomato sauce and mozzarella",
           "price": "18 AZN",
-          "modelPath": "/models/cake.obj",
-          "mtlPath": "/models/textures/cake/cake.mtl",
-          "category": "desserts"
+          "modelPath": "/models/pizza_margarita.obj",
+          "mtlPath": "/models/textures/pizza/pizza_margarita/pizza_margarita.mtl",
+          "category": "pizza"
+        },
+        {
+          "id": "pizza-pepperoni",
+          "name": "Pizza Pepperoni",
+          "description": "Pizza with pepperoni, tomato sauce and cheese",
+          "price": "20 AZN",
+          "modelPath": "/models/pizza_pepperoni.obj",
+          "mtlPath": "/models/textures/pizza/pizza_pepperoni/pizza_pepperoni.mtl",
+          "category": "pizza"
+        },
+        {
+          "id": "mix-pizza",
+          "name": "Mix Pizza",
+          "description": "Mixed pizza with various toppings",
+          "price": "22 AZN",
+          "modelPath": "/models/mix_pizza.obj",
+          "mtlPath": "/models/textures/pizza/mix_pizza/mix_pizza.mtl",
+          "category": "pizza"
+        },
+        {
+          "id": "pizza-chicken",
+          "name": "Pizza with Chicken",
+          "description": "Pizza with chicken, vegetables and cheese",
+          "price": "21 AZN",
+          "modelPath": "/models/pizza_chicken.obj",
+          "mtlPath": "/models/textures/pizza/pizza_chicken/pizza_chicken.mtl",
+          "category": "pizza"
+        },
+        {
+          "id": "pizza-caesar",
+          "name": "Pizza Caesar",
+          "description": "Pizza with caesar sauce, chicken and vegetables",
+          "price": "23 AZN",
+          "modelPath": "/models/pizza_caesar.obj",
+          "mtlPath": "/models/textures/pizza/pizza_caesar/pizza_caesar.mtl",
+          "category": "pizza"
+        },
+        {
+          "id": "toast-cheese",
+          "name": "Cheese Toast",
+          "description": "Toast with melted cheese",
+          "price": "8 AZN",
+          "modelPath": "/models/toast_cheese.obj",
+          "mtlPath": "/models/textures/toasts/toast_cheese/toast_cheese.mtl",
+          "category": "toasts"
+        },
+        {
+          "id": "chicken-toast",
+          "name": "Chicken Toast",
+          "description": "Toast with chicken and vegetables",
+          "price": "10 AZN",
+          "modelPath": "/models/chicken_toast.obj",
+          "mtlPath": "/models/textures/toasts/chicken_toast/chicken_toast.mtl",
+          "category": "toasts"
+        },
+        {
+          "id": "sausage-toast",
+          "name": "Sausage Toast",
+          "description": "Toast with sausage and cheese",
+          "price": "9 AZN",
+          "modelPath": "/models/sausage_toast.obj",
+          "mtlPath": "/models/textures/toasts/sausage_toast/sausage_toast.mtl",
+          "category": "toasts"
+        },
+        {
+          "id": "mix-toast",
+          "name": "Mix Toast",
+          "description": "Mixed toast with various ingredients",
+          "price": "11 AZN",
+          "modelPath": "/models/mix_toast.obj",
+          "mtlPath": "/models/textures/toasts/mix_toast/mix_toast.mtl",
+          "category": "toasts"
+        },
+        {
+          "id": "sandwich-chicken",
+          "name": "Chicken Sandwich",
+          "description": "Sandwich with chicken, vegetables and sauce",
+          "price": "12 AZN",
+          "modelPath": "/models/sandwich_chicken.obj",
+          "mtlPath": "/models/textures/sandwiches/sandwich_chicken/sandwich_chicken.mtl",
+          "category": "toasts"
+        },
+        {
+          "id": "sandwich-meat",
+          "name": "Meat Sandwich",
+          "description": "Sandwich with meat, vegetables and sauce",
+          "price": "13 AZN",
+          "modelPath": "/models/sandwich_meat.obj",
+          "mtlPath": "/models/textures/sandwiches/sandwich_meat/sandwich_meat.mtl",
+          "category": "toasts"
+        },
+        {
+          "id": "club-sandwich",
+          "name": "Club Sandwich",
+          "description": "Classic club sandwich with multiple layers",
+          "price": "15 AZN",
+          "modelPath": "/models/club_sandwich.obj",
+          "mtlPath": "/models/textures/sandwiches/club_sandwich/club_sandwich.mtl",
+          "category": "toasts"
+        },
+        {
+          "id": "burger-chicken",
+          "name": "Chicken Burger",
+          "description": "Burger with chicken patty, vegetables and sauce",
+          "price": "14 AZN",
+          "modelPath": "/models/burger_chicken.obj",
+          "mtlPath": "/models/textures/burgers/burger_chicken/burger_chicken.mtl",
+          "category": "burgers"
+        },
+        {
+          "id": "burger-meat",
+          "name": "Meat Burger",
+          "description": "Burger with meat patty, vegetables and sauce",
+          "price": "16 AZN",
+          "modelPath": "/models/burger_meat.obj",
+          "mtlPath": "/models/textures/burgers/burger_meat/burger_meat.mtl",
+          "category": "burgers"
+        },
+        {
+          "id": "special-burger",
+          "name": "Special Burger",
+          "description": "Special burger with premium ingredients",
+          "price": "18 AZN",
+          "modelPath": "/models/special_burger.obj",
+          "mtlPath": "/models/textures/burgers/special_burger/special_burger.mtl",
+          "category": "burgers"
+        },
+        {
+          "id": "burger-set-chicken",
+          "name": "Chicken Burger Set",
+          "description": "Chicken burger with fries and drink",
+          "price": "20 AZN",
+          "modelPath": "/models/burger_set_chicken.obj",
+          "mtlPath": "/models/textures/burgers/burger_set_chicken/burger_set_chicken.mtl",
+          "category": "burgers"
+        },
+        {
+          "id": "burger-set-meat",
+          "name": "Meat Burger Set",
+          "description": "Meat burger with fries and drink",
+          "price": "22 AZN",
+          "modelPath": "/models/burger_set_meat.obj",
+          "mtlPath": "/models/textures/burgers/burger_set_meat/burger_set_meat.mtl",
+          "category": "burgers"
+        },
+        {
+          "id": "roll-chicken",
+          "name": "Chicken Roll",
+          "description": "Roll with chicken and vegetables",
+          "price": "11 AZN",
+          "modelPath": "/models/roll_chicken.obj",
+          "mtlPath": "/models/textures/rolls/roll_chicken/roll_chicken.mtl",
+          "category": "rolls"
+        },
+        {
+          "id": "roll-caesar",
+          "name": "Caesar Roll",
+          "description": "Roll with caesar sauce and chicken",
+          "price": "12 AZN",
+          "modelPath": "/models/roll_caesar.obj",
+          "mtlPath": "/models/textures/rolls/roll_caesar/roll_caesar.mtl",
+          "category": "rolls"
+        },
+        {
+          "id": "roll-tikka",
+          "name": "Tikka Roll",
+          "description": "Roll with tikka sauce and chicken",
+          "price": "13 AZN",
+          "modelPath": "/models/roll_tikka.obj",
+          "mtlPath": "/models/textures/rolls/roll_tikka/roll_tikka.mtl",
+          "category": "rolls"
+        },
+        {
+          "id": "lentil-soup",
+          "name": "Lentil Soup",
+          "description": "Hearty lentil soup with vegetables",
+          "price": "9 AZN",
+          "modelPath": "/models/lentil_soup.obj",
+          "mtlPath": "/models/textures/soups/lentil_soup/lentil_soup.mtl",
+          "category": "soups"
+        },
+        {
+          "id": "tomato-soup",
+          "name": "Tomato Soup",
+          "description": "Fresh tomato soup with herbs",
+          "price": "8 AZN",
+          "modelPath": "/models/tomato_soup.obj",
+          "mtlPath": "/models/textures/soups/tomato_soup/tomato_soup.mtl",
+          "category": "soups"
+        },
+        {
+          "id": "mushroom-soup",
+          "name": "Mushroom Soup",
+          "description": "Creamy mushroom soup",
+          "price": "10 AZN",
+          "modelPath": "/models/mushroom_soup.obj",
+          "mtlPath": "/models/textures/soups/mushroom_soup/mushroom_soup.mtl",
+          "category": "soups"
+        },
+        {
+          "id": "fries",
+          "name": "French Fries",
+          "description": "Crispy french fries",
+          "price": "4 AZN",
+          "modelPath": "/models/fries.obj",
+          "mtlPath": "/models/textures/snacks/fries/fries.mtl",
+          "category": "snacks"
+        },
+        {
+          "id": "chips",
+          "name": "Potato Chips",
+          "description": "Crispy potato chips",
+          "price": "3 AZN",
+          "modelPath": "/models/chips.obj",
+          "mtlPath": "/models/textures/snacks/chips/chips.mtl",
+          "category": "snacks"
+        },
+        {
+          "id": "nachos",
+          "name": "Nachos",
+          "description": "Crispy nachos with salsa",
+          "price": "6 AZN",
+          "modelPath": "/models/nachos.obj",
+          "mtlPath": "/models/textures/snacks/nachos/nachos.mtl",
+          "category": "snacks"
+        },
+        {
+          "id": "nachos-cheese",
+          "name": "Nachos with Cheese",
+          "description": "Nachos with melted cheese",
+          "price": "7 AZN",
+          "modelPath": "/models/nachos_cheese.obj",
+          "mtlPath": "/models/textures/snacks/nachos_cheese/nachos_cheese.mtl",
+          "category": "snacks"
+        },
+        {
+          "id": "chicken-popcorn",
+          "name": "Chicken Popcorn",
+          "description": "Crispy chicken popcorn",
+          "price": "8 AZN",
+          "modelPath": "/models/chicken_popcorn.obj",
+          "mtlPath": "/models/textures/snacks/chicken_popcorn/chicken_popcorn.mtl",
+          "category": "snacks"
+        },
+        {
+          "id": "sunflower-seeds",
+          "name": "Sunflower Seeds",
+          "description": "Roasted sunflower seeds",
+          "price": "2 AZN",
+          "modelPath": "/models/sunflower_seeds.obj",
+          "mtlPath": "/models/textures/snacks/sunflower_seeds/sunflower_seeds.mtl",
+          "category": "snacks"
+        },
+        {
+          "id": "crackers",
+          "name": "Crackers",
+          "description": "Crispy crackers",
+          "price": "3 AZN",
+          "modelPath": "/models/crackers.obj",
+          "mtlPath": "/models/textures/snacks/crackers/crackers.mtl",
+          "category": "snacks"
+        },
+        {
+          "id": "croutons",
+          "name": "Croutons",
+          "description": "Crispy bread croutons",
+          "price": "2 AZN",
+          "modelPath": "/models/croutons.obj",
+          "mtlPath": "/models/textures/snacks/croutons/croutons.mtl",
+          "category": "snacks"
+        },
+        {
+          "id": "string_cheese",
+          "name": "String Cheese",
+          "description": "String cheese sticks",
+          "price": "4 AZN",
+          "price": "4 AZN",
+          "modelPath": "/models/string_cheese.obj",
+          "mtlayout": "/models/textures/snacks/string_cheese/string_cheese.mtl",
+          "category": "snacks"
+        },
+        {
+          "id": "peas",
+          "name": "Peas",
+          "description": "Fresh green peas",
+          "price": "3 AZN",
+          "modelPath": "/models/peas.obj",
+          "mtlPath": "/models/textures/snacks/peas/peas.mtl",
+          "category": "snacks"
+        },
+        {
+          "id": "fried-peas",
+          "name": "Fried Peas",
+          "description": "Crispy fried peas",
+          "price": "4 AZN",
+          "modelPath": "/models/fried_peas.obj",
+          "mtlPath": "/models/textures/snacks/fried_peas/fried_peas.mtl",
+          "category": "snacks"
+        },
+        {
+          "id": "mozarella-sticks",
+          "name": "Mozzarella Sticks",
+          "description": "Crispy mozzarella cheese sticks",
+          "price": "6 AZN",
+          "modelPath": "/models/mozarella_sticks.obj",
+          "mtlPath": "/models/textures/snacks/mozarella_sticks/mozarella_sticks.mtl",
+          "category": "snacks"
+        },
+        {
+          "id": "fried_dumplings",
+          "name": "Fried Dumplings",
+          "description": "Crispy fried dumplings",
+          "price": "5 AZN",
+          "modelPath": "/models/fried_dumplings.obj",
+          "mtlPath": "/models/textures/snacks/fried_dumplings/fried_dumplings.mtl",
+          "category": "snacks"
+        },
+        {
+          "id": "peanuts",
+          "name": "Peanuts",
+          "description": "Roasted peanuts",
+          "price": "3 AZN",
+          "modelPath": "/models/peanuts.obj",
+          "mtlPath": "/models/textures/snacks/peanuts/peanuts.mtl",
+          "category": "snacks"
+        },
+        {
+          "id": "fried-mushrooms",
+          "name": "Fried Mushrooms",
+          "description": "Crispy fried mushrooms",
+          "price": "5 AZN",
+          "modelPath": "/models/fried_mushrooms.obj",
+          "mtlPath": "/models/textures/snacks/fried_mushrooms/fried_mushrooms.mtl",
+          "category": "snacks"
+        },
+        {
+          "id": "corn-dog",
+          "name": "Corn Dog",
+          "description": "Dough, Sausage",
+          "price": "5 AZN",
+          "modelPath": "/models/corn_dog.obj",
+          "mtlPath": "/models/textures/snacks/corn_dog/corn_dog.mtl",
+          "category": "snacks"
+        },
+        {
+          "id": "nuggets-fries",
+          "name": "Nuggets with Fries",
+          "description": "ChickenNuggets, Fries",
+          "price": "5 AZN",
+          "modelPath": "/models/nuggets_fries.obj",
+          "mtlPath": "/models/textures/snacks/nuggets_fries/nuggets_fries.mtl",
+          "category": "snacks"
+        },
+        {
+          "id": "nuggets",
+          "name": "Nuggets",
+          "description": "Chicken Nuggets",
+          "price": "5 AZN",
+          "modelPath": "/models/nuggets.obj",
+          "mtlPath": "/models/textures/snacks/nuggets/nuggets.mtl",
+          "category": "snacks"
+        },
+        {
+          "id": "chicken-throat",
+          "name": "Chicken Throat",
+          "description": "Chicken Throat",
+          "price": "5 AZN",
+          "modelPath": "/models/chicken_throat.obj",
+          "mtlPath": "/models/textures/snacks/chicken_throat/chicken_throat.mtl",
+          "category": "snacks"
+        },
+        {
+          "id": "chicken-stomach",
+          "name": "Chicken Stomach",
+          "description": "Chicken Stomach",
+          "price": "5 AZN",
+          "modelPath": "/models/chicken_stomach.obj",
+          "mtlPath": "/models/textures/snacks/chicken_stomach/chicken_stomach.mtl",
+          "category": "snacks"
+        },
+        {
+          "id": "olives",
+          "name": "Olives",
+          "description": "Olives",
+          "price": "4 AZN",
+          "modelPath": "/models/olives.obj",
+          "mtlPath": "/models/textures/snacks/olives/olives.mtl",
+          "category": "snacks"
+        },
+        {
+          "id": "chicken-langet",
+          "name": "Chicken Langet",
+          "description": "Chicken Langet",
+          "price": "8 AZN",
+          "modelPath": "/models/chicken_langet.obj",
+          "mtlPath": "/models/textures/other/chicken_langet/chicken_langet.mtl",
+          "category": "other"
+        },
+        {
+          "id": "chicken_rice",
+          "name": "Chicken with Rice",
+          "description": "Chicken, rice, vegetables, spices",
+          "price": "8 AZN",
+          "modelPath": "/models/chicken_rice.obj",
+          "mtlPath": "/models/textures/other/chicken_rice/chicken_rice.mtl",
+          "category": "other"
         }
       ]
     },
@@ -74,47 +534,645 @@
       "name": "Salads",
       "items": [
         {
-          "id": "salad-1",
-          "name": "Special Salad",
-          "description": "Classic Salad with meat",
-          "price": "10 AZN",
-          "modelPath": "/models/cocktail-martini.obj",
-          "mtlPath": "/models/textures/cocktail-martini/cocktail-martini.mtl",
+          "id": "chicken-popcorn-salad",
+          "name": "Chicken Popcorn Salad",
+          "description": "Iceberg lettuce, tomatoes, cucumber, mixed greens, chicken popcorns, special sauce",
+          "price": "15 AZN",
+          "modelPath": "/models/salad_toyuq.obj",
+          "mtlPath": "/models/textures/salads/salad_toyuq/salad_toyuq.mtl",
+          "category": "salads"
+        }, 
+
+        {
+          "id": "salad-caesar",
+          "name": "Classic Caesar with Chicken",
+          "description": "Iceberg lettuce, breadcrumbs, chicken, caesar sauce, cherry tomatoes, parmesan cheese",
+          "price": "11 AZN",
+          "modelPath": "/models/salad_caesar.obj",
+          "mtlPath": "/models/textures/salads/salad_caesar/salad_caesar.mtl",
+          "category": "salads"
+        },
+
+        {
+          "id": "salad-caesar-with-shrimps",
+          "name": "Salad Caesar with Shrimps",
+          "description": "Iceberg lettuce, breadcrumbs, caesar sauce, cherry tomatoes, parmesan cheese, shrimps",
+          "price": "15 AZN",
+          "modelPath": "/models/salad_caesar_shrimps.obj",
+          "mtlPath": "/models/textures/salads/salad_caesar_shrimps/salad_caesar_shrimps.mtl",
+          "category": "salads"
+        },
+
+        {
+          "id": "chicken-salad",
+          "name": "Chicken Salad",
+          "description": "Iceberg lettuce, tomatoes, cucumber, lettuce, garlic, onion rings, cabbage, chicken, special sauce",
+          "price": "14 AZN",
+          "modelPath": "/models/chicken_salad.obj",
+          "mtlPath": "/models/textures/salads/chicken_salad/chicken_salad.mtl",
+          "category": "salads"
+        },
+
+        {
+          "id": "cheese-salad",
+          "name": "Cheese Salad",
+          "description": "Tomatoes, cucumber, red pepper, green pepper, iceberg lettuce, red cabbage, lettuce, egg",
+          "price": "11 AZN",
+          "modelPath": "/models/cheese_salad.obj",
+          "mtlPath": "/models/textures/salads/cheese_salad/cheese_salad.mtl",
+          "category": "salads"
+        }, 
+
+        {
+          "id": "shrimp-popcorn",
+          "name": "Shrimp Popcorn",
+          "description": "Iceberg lettuce, tomatoes, cucumber, mixed greens, shrimps popcorn, special sauce",
+          "price": "17 AZN",
+          "modelPath": "/models/shrimp_popcorn.obj",
+          "mtlPath": "/models/textures/salads/shrimp_popcorn/shrimp_popcorn.mtl",
+          "category": "salads"
+        },
+
+        {
+          "id": "tuna-salad",
+          "name": "Tuna Salad",
+          "description": "Tuna, tomatoes, cucumber, lettuce, egg, corn, olives, special sauce",
+          "price": "15 AZN",
+          "modelPath": "/models/tuna_salad.obj",
+          "mtlPath": "/models/textures/salads/tuna_salad/tuna_salad.mtl",
+          "category": "salads"
+        },
+
+        {
+          "id": "salad-avocado-shrimps",
+          "name": "Salad Avocado with Shrimps",
+          "description": "Avocado, tomatoes, cucumber, lettuce, shrimps, parmesan cheese, special sauce",
+          "price": "17 AZN",
+          "modelPath": "/models/salad_avocado_shrimps.obj",
+          "mtlPath": "/models/textures/salads/salad_avocado_shrimps/salad_avocado_shrimps.mtl",
           "category": "salads"
         }
       ]
     },
+
+    {
+      "id": "Pasta",
+      "name": "Pasta",
+      "items": [
+        {
+          "id": "pasta-fettuccine",
+          "name": "Pasta Fettuccine",
+          "description": "Fettuccine, chicken, milk, cream, mushrooms, parmesan cheese, alfredo sauce",
+          "price": "15 AZN",
+          "modelPath": "/models/pasta_fettuccine.obj",
+          "mtlPath": "/models/textures/pastas/pasta_fettuccine/pasta_fettuccine.mtl",
+          "category": "pasta"
+        },
+
+        {
+          "id": "pasta-meat",
+          "name": "Pasta with Meat",
+          "description": "Fettuccine, meat, parmesan cheese, speacial sauce",
+          "price": "15 AZN",
+          "modelPath": "/models/pasta_meat.obj",
+          "mtlPath": "/models/textures/pastas/pasta_meat/pasta_meat.mtl",
+          "category": "pasta"
+        }
+      ]
+    },
+
+    {
+      "id": "Noodles",
+      "name": "Noodles",
+      "items": [
+        {
+          "id": "noodles-chicken",
+          "name": "Noodles with Chicken",
+          "description": "Noodles, chicken,carrot, green pepper, onion, sesame, special sauce",
+          "price": "12 AZN",
+          "modelPath": "/models/noodles_chicken.obj",
+          "mtlPath": "/models/textures/noodles/noodles_chicken/noodles_chicken.mtl",
+          "category": "noodles"
+        },
+
+        {
+          "id": "noodles-shrimps",
+          "name": "Noodles with Shrimps",
+          "description": "Noodles, shrimps, carrot, green pepper, onion, sesame, special sauce",
+          "price": "17 AZN",
+          "modelPath": "/models/noodles_shrimps.obj",
+          "mtlPath": "/models/textures/noodles/noodles_shrimps/noodles_shrimps.mtl",
+          "category": "noodles"
+        }
+      ]
+    },
+
+    {
+      "id": "Pizza",
+      "name": "Pizza",
+      "items": [
+        {
+          "id": "pizza-margarita",
+          "name": "Pizza Margarita",
+          "description": "Pizza dough, tomato sauce, mozzarella cheese, tomatoes, sesame",
+          "price": "10 AZN",
+          "modelPath": "/models/pizza_margarita.obj",
+          "mtlPath": "/models/textures/pizzas/pizza_margarita/pizza_margarita.mtl",
+          "category": "pizza"
+        },
+
+        {
+          "id": "pizza-pepperoni",
+          "name": "Pizza Pepperoni",
+          "description": "Pizza dough, tomato sauce, mozzarella cheese, pepperoni, sesame",
+          "price": "12 AZN",
+          "modelPath": "/models/pizza_pepperoni.obj",
+          "mtlPath": "/models/textures/pizzas/pizza_pepperoni/pizza_pepperoni.mtl",
+          "category": "pizza"
+        },
+
+        {
+          "id": "mix-pizza",
+          "name": "Mix Pizza",
+          "description": "Pizza dough, tomato sauce, mozarella cheese, chicken, sausages, green pepper, red pepper, mushrooms, corn, olives",
+          "price": "16 AZN",
+          "modelPath": "/models/mix_pizza.obj",
+          "mtlPath": "/models/textures/pizzas/mix_pizza/mix_pizza.mtl",
+          "category": "pizza"
+        },
+
+        {
+          "id": "pizza-chicken",
+          "name": "Chicken Pizza",
+          "description": "Pizza dough, tomato sauce, mozzarella cheese, chicken, mushrooms, sesame",
+          "price": "12 AZN",
+          "modelPath": "/models/pizza_chicken.obj",
+          "mtlPath": "/models/textures/pizzas/pizza_chicken/pizza_chicken.mtl",
+          "category": "pizza"
+        },
+
+        {
+          "id": "pizza-caesar",
+          "name": "Pizza Caesar",
+          "description": "Pizza dough, tomato sauce, mozzarella cheese, chicken, cherry tomatoes, lettuce, parmesan cheese, special sauce",
+          "price": "15 AZN",
+          "modelPath": "/models/pizza_caesar.obj",
+          "mtlPath": "/models/textures/pizzas/pizza_caesar/pizza_caesar.mtl",
+          "category": "pizza"
+        }
+      ]
+    },
+
+    {
+      "id": "Toasts & Sandwiches",
+      "name": "Toasts & Sandwiches",
+      "items": [
+        {
+          "id": "toast-cheese",
+          "name": "Cheese Toast",
+          "description": "Toast bread, cheese, tomato sauce",
+          "price": "6 AZN",
+          "modelPath": "/models/cheese_toast.obj",
+          "mtlPath": "/models/textures/toasts_sandwiches/cheese_toast/cheese_toast.mtl",
+          "category": "toasts"
+        },
+
+        {
+          "id": "chicken-toast",
+          "name": "Chicken Toast",
+          "description": "Toast bread, cheese, chicken, tomato sauce",
+          "price": "7 AZN",
+          "modelPath": "/models/chicken_toast.obj",
+          "mtlPath": "/models/textures/toasts_sandwiches/chicken_toast/chicken_toast.mtl",
+          "category": "toasts"
+        },
+
+        {
+          "id": "sausage-toast",
+          "name": "Sausage Toast",
+          "description": "Toast bread, sausage, cheese, tomato sauce",
+          "price": "7 AZN",
+          "modelPath": "/models/sausage_toast.obj",
+          "mtlPath": "/models/textures/toasts_sandwiches/sausage_toast/sausage_toast.mtl",
+          "category": "toasts"
+        },
+
+        {
+          "id": "mix-toast",
+          "name": "Mix Toast",
+          "description": "Toast bread, cheese, chicken, sausage, tomato sauce",
+          "price": "8 AZN",
+          "modelPath": "/models/mix_toast.obj",
+          "mtlPath": "/models/textures/toasts_sandwiches/mix_toast/mix_toast.mtl",
+          "category": "toasts"
+        },
+
+        {
+          "id": "sandwich-chicken",
+          "name": "Chicken Sandwich",
+          "description": "Sandwich bread, cheese, chicken, tomato, onion, special sauce",
+          "price": "7 AZN",
+          "modelPath": "/models/chicken_sandwich.obj",
+          "mtlPath": "/models/textures/toasts_sandwiches/chicken_sandwich/chicken_sandwich.mtl",
+          "category": "toasts"
+        },
+
+        {
+          "id": "sandwich-meat",
+          "name": "Meat Sandwich",
+          "description": "Sandwich bread, cheese, meat, tomato, onion, special sauce",
+          "price": "8 AZN",
+          "modelPath": "/models/chicken_sandwich.obj",
+          "mtlPath": "/models/textures/toasts_sandwiches/meat_sandwich/chicken_sandwich.mtl",
+          "category": "toasts"
+        },
+
+        {
+          "id": "club-sandwich",
+          "name": "Club Sandwich",
+          "description": "Toast bread, cheese, chicken, sausage,tomato, special sauce",
+          "price": "11 AZN",
+          "modelPath": "/models/club_sandwich.obj",
+          "mtlPath": "/models/textures/toasts_sandwiches/club_sandwich/club_sandwich.mtl",
+          "category": "toasts"
+        }
+      ]
+    },
+
+    {
+      "id": "Burgers",
+      "name": "Burgers",
+      "items": [
+        {
+          "id": "burger-chicken",
+          "name": "Chicken Burger",
+          "description": "Burger bread, chicken, mayonnaise, lettuce, tomato, cheddar cheese, special sauce",
+          "price": "8 AZN",
+          "modelPath": "/models/chicken_burger.obj",
+          "mtlPath": "/models/textures/burgers/chicken_burger/chicken_burger.mtl", 
+          "category": "burgers"
+        },
+
+        {
+          "id": "burger-meat",
+          "name": "Meat Burger",
+            "description": "Burger bread, meat, mayonnaise, lettuce, tomato, cheddar cheese, special sauce",
+          "price": "11 AZN",
+          "modelPath": "/models/meat_burger.obj",
+          "mtlPath": "/models/textures/burgers/meat_burger/meat_burger.mtl",
+          "category": "burgers"
+        },
+
+        {
+          "id": "special-burger",
+          "name": "Sam's Special Burger",
+            "description": "Sam's Special Burger",
+          "price": "10 AZN",
+          "modelPath": "/models/sams_special_burger.obj",
+          "mtlPath": "/models/textures/burgers/sams_special_burger/sams_special_burger.mtl",
+          "category": "burgers"
+        },
+
+        {
+          "id": "burger-set-chicken",
+          "name": "Burger Set with Chicken",
+          "description": "Burger bread, chicken, mayonnaise, lettuce, tomato, cheddar cheese, special sauce, fries, drink",
+          "price": "14 AZN",
+          "modelPath": "/models/burger_set_chicken.obj",
+          "mtlPath": "/models/textures/burgers/burger_set_chicken/burger_set_chicken.mtl",
+          "category": "burgers"
+        },
+
+        {
+          "id": "burger-set-meat",
+          "name": "Burger Set with Meat",
+          "description": "Burger bread, meat, mayonnaise, lettuce, tomato, cheddar cheese, special sauce, fries, drink",
+          "price": "16 AZN",
+          "modelPath": "/models/burger_set_meat.obj",
+          "mtlPath": "/models/textures/burgers/burger_set_meat/burger_set_meat.mtl",
+          "category": "burgers"
+        }
+      ]
+    },
+
+    {
+      "id": "Rolls",
+      "name": "Rolls",
+      "items": [
+        {
+          "id": "roll-chicken",
+          "name": "Chicken Roll",
+          "description": "Roll, chicken, mayonnaise, lettuce, tomato, cheddar cheese, special sauce",
+          "price": "8 AZN",
+          "modelPath": "/models/roll_chicken.obj",
+          "mtlPath": "/models/textures/rolls/roll_chicken/roll_chicken.mtl",
+          "category": "rolls"
+        },
+
+        {
+          "id": "roll-caesar",
+          "name": "Caesar Roll",
+          "description": "Roll, chicken, lettuce, tomato, cheddar cheese, caesar sauce",
+          "price": "9 AZN",
+          "modelPath": "/models/roll_caesar.obj",
+          "mtlPath": "/models/textures/rolls/roll_caesar/roll_caesar.mtl",
+          "category": "rolls"
+        },
+
+        {
+          "id": "roll-tikka",
+          "name": "Tikka Roll",
+          "description": "Roll, chicken, mayonnaise, lettuce, tomato, cheddar cheese, tikka sauce",
+          "price": "11 AZN",
+          "modelPath": "/models/roll_tikka.obj",
+          "mtlPath": "/models/textures/rolls/roll_tikka/roll_tikka.mtl",
+          "category": "rolls"
+        }
+      ]
+    },
+    {
+      "id": "Soups",
+      "name": "Soups",
+      "items": [
+        {
+          "id": "lentil-soup",
+          "name": "Lentil Soup",
+          "description": "Lentil, carrots, onions, potatoes, spices",
+          "price": "5 AZN",
+          "modelPath": "/models/lentil_soup.obj",
+          "mtlPath": "/models/textures/soups/lentil_soup/lentil_soup.mtl",
+          "category": "soups"
+        },
+
+        {
+          "id": "tomato-soup",
+          "name": "Tomato Soup",
+          "description": "Tomato, carrots, onions, croutons, potatoes, spices",
+          "price": "5 AZN",
+          "modelPath": "/models/tomato_soup.obj",
+          "mtlPath": "/models/textures/soups/tomato_soup/tomato_soup.mtl",
+          "category": "soups"
+        },
+
+        {
+          "id": "mushroom-soup",
+          "name": "Mushroom Soup",
+          "description": "Mushroom, cream, onions, potatoes, cheese, spices",
+          "price": "7 AZN",
+          "modelPath": "/models/mushroom_soup.obj",
+          "mtlPath": "/models/textures/soups/mushroom_soup/mushroom_soup.mtl",
+          "category": "soups"
+        }
+
+      ]
+    },
+    {
+      "id": "Snacks",
+      "name": "Snacks",
+      "items": [
+        {
+          "id": "fries",
+          "name": "Fries",
+          "description": "Fries",
+          "price": "5,5 AZN",
+          "modelPath": "/models/fries.obj",
+          "mtlPath": "/models/textures/snacks/fries/fries.mtl",
+          "category": "snacks"
+        },
+
+        {
+          "id": "chips",
+          "name": "Chips",
+          "description": "Potato chips",
+          "price": "5 AZN",
+          "modelPath": "/models/chips.obj",
+          "mtlPath": "/models/textures/snacks/chips/chips.mtl",
+          "category": "snacks"
+        },
+        
+        {
+          "id": "nachos",
+          "name": "Nachos",
+          "description": "Nachos, cheese sauce",
+          "price": "7,5 AZN",
+          "modelPath": "/models/nachos.obj",
+          "mtlPath": "/models/textures/snacks/nachos/nachos.mtl",
+          "category": "snacks"
+        },
+
+        {
+          "id": "nachos-cheese",
+          "name": "Nachos with Cheese",
+          "description": "Nachos, cheese sauce",
+          "price": "7,5 AZN",
+          "modelPath": "/models/nachos_cheese.obj",
+          "mtlPath": "/models/textures/snacks/nachos_cheese/nachos_cheese.mtl",
+          "category": "snacks"
+        },
+
+        {
+          "id": "chicken-popcorn",
+          "name": "Chicken Popcorn",
+          "description": "Chicken, flour, spices",
+          "price": "5 AZN",
+          "modelPath": "/models/chicken_popcorn.obj",
+          "mtlPath": "/models/textures/snacks/chicken_popcorn/chicken_popcorn.mtl",
+          "category": "snacks"
+        },
+
+        {
+          "id": "sunflower-seeds",
+          "name": "Sunflower Seeds",
+          "description": "White Sunflower seeds",
+          "price": "4 AZN",
+          "modelPath": "/models/sunflower_seeds.obj",
+          "mtlPath": "/models/textures/snacks/sunflower_seeds/sunflower_seeds.mtl",
+          "category": "snacks"
+        },
+
+        {
+          "id": "crackers",  
+          "name": "Crackers",
+          "description": "Crackers",
+          "price": "4 AZN",
+          "modelPath": "/models/crackers.obj",
+          "mtlPath": "/models/textures/snacks/crackers/crackers.mtl",
+          "category": "snacks"
+        },
+
+        {
+          "id": "croutons",  
+          "name": "Croutons",
+          "description": "Croutons",
+          "price": "4 AZN",
+          "modelPath": "/models/croutons.obj",
+          "mtlPath": "/models/textures/snacks/croutons/croutons.mtl",
+          "category": "snacks"
+        },
+
+        {
+          "id": "string_cheese",  
+          "name": "String Cheese",
+          "description": "String Cheese",
+          "price": "5 AZN",
+          "modelPath": "/models/string_cheese.obj",
+          "mtlPath": "/models/textures/snacks/string_cheese/string_cheese.mtl",
+          "category": "snacks"
+        },
+
+        {
+          "id": "peas",  
+          "name": "Peas",
+          "description": "Peas",
+          "price": "4 AZN",
+          "modelPath": "/models/peas.obj",
+          "mtlPath": "/models/textures/snacks/peas/peas.mtl",
+          "category": "snacks"
+        },
+
+        {
+          "id": "fried-peas",  
+          "name": "Fried Peas",
+          "description": "FriedPeas",
+          "price": "5 AZN",
+          "modelPath": "/models/fried_peas.obj",
+          "mtlPath": "/models/textures/snacks/fried_peas/fried_peas.mtl",
+          "category": "snacks"
+        },
+
+        {
+          "id": "mozarella-sticks",  
+          "name": "Mozarella Sticks",
+          "description": "Mozarella Sticks",
+          "price": "5 AZN",
+          "modelPath": "/models/mozarella_sticks.obj",
+          "mtlPath": "/models/textures/snacks/mozarella_sticks/mozarella_sticks.mtl",
+          "category": "snacks"
+        },
+
+        {
+          "id": "fried_dumplings",  
+          "name": "Fried Dumplings",
+          "description": "Fried Dumplings",
+          "price": "5 AZN",
+          "modelPath": "/models/fried_dumplings.obj",
+          "mtlPath": "/models/textures/snacks/fried_dumplings/fried_dumplings.mtl",
+          "category": "snacks"
+        },
+
+        {
+          "id": "peanuts",  
+          "name": "Peanuts",
+          "description": "Peanuts",
+          "price": "3 AZN",
+          "modelPath": "/models/peanuts.obj",
+          "mtlPath": "/models/textures/snacks/peanuts/peanuts.mtl",
+          "category": "snacks"
+        },
+
+        {
+          "id": "fried-mushrooms",  
+          "name": "Fried Mushrooms",
+          "description": "Fried Mushrooms",
+          "price": "5 AZN",
+          "modelPath": "/models/fried_mushrooms.obj",
+          "mtlPath": "/models/textures/snacks/fried_mushrooms/fried_mushrooms.mtl",
+          "category": "snacks"
+        },
+
+        {
+          "id": "corn-dog",  
+          "name": "Corn Dog",
+          "description": "Dough, Sausage",
+          "price": "5 AZN",
+          "modelPath": "/models/corn_dog.obj",
+          "mtlPath": "/models/textures/snacks/corn_dog/corn_dog.mtl",
+          "category": "snacks"
+        },
+
+        {
+          "id": "nuggets-fries",  
+          "name": "Nuggets with Fries",
+          "description": "ChickenNuggets, Fries",
+          "price": "5 AZN",
+          "modelPath": "/models/nuggets_fries.obj",
+          "mtlPath": "/models/textures/snacks/nuggets_fries/nuggets_fries.mtl",
+          "category": "snacks"
+        },
+
+        {
+          "id": "nuggets",  
+          "name": "Nuggets",
+          "description": "Chicken Nuggets",
+          "price": "5 AZN",
+          "modelPath": "/models/nuggets.obj",
+          "mtlPath": "/models/textures/snacks/nuggets/nuggets.mtl",
+          "category": "snacks"
+        },
+
+        {
+          "id": "chicken-throat",  
+          "name": "Chicken Throat",
+          "description": "Chicken Throat",
+          "price": "5 AZN",
+          "modelPath": "/models/chicken_throat.obj",
+          "mtlPath": "/models/textures/snacks/chicken_throat/chicken_throat.mtl",
+          "category": "snacks"
+        },
+
+        {
+          "id": "chicken-stomach",  
+          "name": "Chicken Stomach",
+          "description": "Chicken Stomach",
+          "price": "5 AZN",
+          "modelPath": "/models/chicken_stomach.obj",
+          "mtlPath": "/models/textures/snacks/chicken_stomach/chicken_stomach.mtl",
+          "category": "snacks"
+        },
+
+        {
+          "id": "olives",  
+          "name": "Olives",
+          "description": "Olives",
+          "price": "4 AZN",
+          "modelPath": "/models/olives.obj",
+          "mtlPath": "/models/textures/snacks/olives/olives.mtl",
+          "category": "snacks"
+        }
+      ]
+    },
+    {
+      "id": "Other",
+      "name": "Other",
+      "items": [
+        {
+          "id": "chicken-langet",
+          "name": "Chicken Langet",
+          "description": "Chicken Langet",
+          "price": "8 AZN",
+          "modelPath": "/models/chicken_langet.obj",
+          "mtlPath": "/models/textures/other/chicken_langet/chicken_langet.mtl",
+          "category": "other"
+        },
+
+        {
+          "id": "chicken_rice",
+          "name": "Chicken with Rice",
+          "description": "Chicken, rice, vegetables, spices",
+          "price": "8 AZN",
+          "modelPath": "/models/chicken_rice.obj",
+          "mtlPath": "/models/textures/other/chicken_rice/chicken_rice.mtl",
+          "category": "other"
+        }
+      ]
+    },
+
     {
       "id": "drinks",
       "name": "Drinks",
       "items": [
-        {
-          "id": "cocktail-1",
-          "name": "Blue Martini",
-          "description": "Классический мартини с голубым оттенком",
-          "price": "15 AZN",
-          "modelPath": "/models/cocktail-blue.obj",
-          "mtlPath": "/models/textures/cocktail-blue/cocktail-blue.mtl",
-          "category": "drinks"
-        },
-        {
-          "id": "cocktail-2",
-          "name": "Classic Martini",
-          "description": "Элегантный классический мартини",
-          "price": "12 AZN",
-          "modelPath": "/models/cocktail-martini.obj",
-          "mtlPath": "/models/textures/cocktail-martini/cocktail-martini.mtl",
-          "category": "drinks"
-        },
-        {
-          "id": "wine-1",
-          "name": "Premium Wine",
-          "description": "Изысканное красное вино",
-          "price": "25 AZN",
-          "modelPath": "/models/wine-glass.obj",
-          "mtlPath": "/models/textures/wine-glass/wine-glass.mtl",
-          "category": "drinks"
-        }
+        
+       
       ]
     }
   ]

@@ -1,0 +1,6 @@
+newmtl Material
+map_Kd textures/58cfa4ef8e8ec2505b2743be221a56d6.jpg
+norm textures/eb2d9fa60221844a9653e4e55e4f2ed0.jpg
+map_ao textures/e5e82f21422b27c6e879fea5b4bbb6b0.jpg
+map_Pr textures/678246b7df40c8e2db4fe1331b475631.jpg
+Pr 1.00
