@@ -5,6 +5,8 @@ import { useParams, useRouter } from 'next/navigation';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
+import { useLanguage } from '../../../contexts/LanguageContext';
+import LanguageSwitcher from '../../../components/LanguageSwitcher';
 
 const Model3DViewer = dynamic(() => import('../../../components/Model3DViewer'), {
   ssr: false,
@@ -17,8 +19,8 @@ const Model3DViewer = dynamic(() => import('../../../components/Model3DViewer'),
 
 interface MenuItem {
   id: string;
-  name: string;
-  description: string;
+  name: string | { en: string; ru: string; az: string };
+  description: string | { en: string; ru: string; az: string };
   price: string;
   category: string;
   modelPath: string;
@@ -29,12 +31,13 @@ interface MenuItem {
 interface MenuData {
   categories: {
     id: string;
-    name: string;
+    name: string | { en: string; ru: string; az: string };
     items: MenuItem[];
   }[];
 }
 
 export default function ViewPage() {
+  const { t, language } = useLanguage();
   const params = useParams();
   const router = useRouter();
   const [currentItem, setCurrentItem] = useState<MenuItem | null>(null);
@@ -60,7 +63,7 @@ export default function ViewPage() {
       <div className="min-h-screen bg-black flex items-center justify-center">
         <div className="text-center">
           <div className="w-16 h-16 border-4 border-cyan-400 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-cyan-400 text-xl">Loading model...</p>
+          <p className="text-cyan-400 text-xl">{t('loading_model')}</p>
         </div>
       </div>
     );
@@ -70,10 +73,10 @@ export default function ViewPage() {
     return (
       <div className="min-h-screen bg-black flex items-center justify-center">
         <div className="text-center">
-          <p className="text-red-400 text-xl mb-4">Блюдо не найдено</p>
+          <p className="text-red-400 text-xl mb-4">{t('dish_not_found')}</p>
           <Link href="/">
             <button className="bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-3 rounded-lg transition-colors duration-300">
-              Вернуться к меню
+              {t('back_to_menu')}
             </button>
           </Link>
         </div>
@@ -89,11 +92,11 @@ export default function ViewPage() {
           <Link href="/">
             <button className="flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-all duration-300 hover:scale-105">
               <ArrowLeft size={20} />
-              Back to menu
+              {t('back_to_menu')}
             </button>
           </Link>
         
-          <div className="w-24"></div>
+          <LanguageSwitcher />
         </div>
       </header>
 
@@ -145,7 +148,12 @@ export default function ViewPage() {
                 <div className="hidden lg:block w-px h-16 bg-gradient-to-b from-transparent via-cyan-500/50 to-transparent"></div>
                 
                 <div className="text-center lg:text-left">
-                  <p className="text-gray-300 text-sm lg:text-base mb-3 max-w-md">{currentItem.description}</p>
+                  <h2 className="text-2xl lg:text-3xl font-bold text-white mb-2">
+                    {typeof currentItem.name === 'object' ? currentItem.name[language] || currentItem.name.en : currentItem.name}
+                  </h2>
+                  <p className="text-gray-300 text-sm lg:text-base mb-3 max-w-md">
+                    {typeof currentItem.description === 'object' ? currentItem.description[language] || currentItem.description.en : currentItem.description}
+                  </p>
                   <span className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
                     {currentItem.price}
                   </span>

@@ -3,11 +3,27 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
+import { useLanguage } from '../contexts/LanguageContext';
+import LanguageSwitcher from '../components/LanguageSwitcher';
+import modelCache from '../utils/ModelCache';
+
+import CacheLoadingIndicator from '../components/CacheLoadingIndicator';
+
+// Динамический импорт 3D компонента для избежания SSR проблем
+const Model3DPreview = dynamic(() => import('../components/Model3DPreview'), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-full flex items-center justify-center">
+      <div className="w-8 h-8 border-2 border-cyan-400 border-t-transparent rounded-full animate-spin"></div>
+    </div>
+  )
+});
 
 interface MenuItem {
   id: string;
-  name: string;
-  description: string;
+  name: string | { en: string; ru: string; az: string };
+  description: string | { en: string; ru: string; az: string };
   price: string;
   category: string;
   imagePath?: string;
@@ -18,28 +34,48 @@ interface MenuItem {
 interface MenuData {
   categories: {
     id: string;
-    name: string;
+    name: string | { en: string; ru: string; az: string };
     items: MenuItem[];
   }[];
 }
 
 export default function Home() {
+  const { t, language } = useLanguage();
   const [menuData, setMenuData] = useState<MenuData | null>(null);
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [selectedCategory, setSelectedCategory] = useState<string>('salads');
   const [loading, setLoading] = useState(true);
+  const [categoryLoading, setCategoryLoading] = useState(false);
+  const [modelsLoading, setModelsLoading] = useState(true);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
 
   useEffect(() => {
     fetch('/menu-data.json')
       .then(res => res.json())
-      .then((data: MenuData) => {
+      .then(async (data: MenuData) => {
         setMenuData(data);
         setLoading(false);
+        
+        // Предзагружаем модели текущей категории
+        const currentCategoryItems = data.categories.find(cat => cat.id === 'salads')?.items || [];
+        const modelsToPreload = currentCategoryItems.slice(0, 6).map(item => ({
+          modelPath: item.modelPath,
+          mtlPath: item.mtlPath
+        }));
+        
+        // Предзагружаем первые несколько моделей
+        try {
+          await modelCache.preloadModels(modelsToPreload);
+        } catch (error) {
+          console.warn('Some models failed to preload:', error);
+        }
+        
+        setModelsLoading(false);
       })
       .catch(err => {
         console.error('Error loading menu data:', err);
         setLoading(false);
+        setModelsLoading(false);
       });
   }, []);
 
@@ -97,44 +133,72 @@ export default function Home() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [canScrollLeft, canScrollRight]);
 
-  const categories = menuData ? menuData.categories.map(cat => ({ id: cat.id, name: cat.name })) : [];
+  const categories = menuData ? 
+    menuData.categories.map(cat => ({ 
+      id: cat.id, 
+      name: t(cat.id.toLowerCase()) || cat.name 
+    })) : [];
+  
   const filteredItems = menuData ? 
-    (selectedCategory === 'all' 
-      ? menuData.categories.find(cat => cat.id === 'all')?.items || []
-      : menuData.categories.find(cat => cat.id === selectedCategory)?.items || []
-    ) : [];
+    (menuData.categories.find(cat => cat.id === selectedCategory)?.items || []) : [];
+
+  // Предзагружаем модели при смене категории
+  useEffect(() => {
+    if (menuData && selectedCategory) {
+      const categoryItems = menuData.categories.find(cat => cat.id === selectedCategory)?.items || [];
+      const modelsToPreload = categoryItems.slice(0, 8).map(item => ({
+        modelPath: item.modelPath,
+        mtlPath: item.mtlPath
+      }));
+      
+      // Предзагружаем модели в фоне
+      modelCache.preloadModels(modelsToPreload).catch(error => {
+        console.warn('Failed to preload models for category:', selectedCategory, error);
+      });
+    }
+  }, [selectedCategory, menuData]);
 
   if (loading) {
     return (
       <div className="min-h-screen bg-black flex items-center justify-center">
         <div className="text-center">
           <div className="w-16 h-16 border-4 border-cyan-400 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-cyan-400 text-xl">Loading menu...</p>
+          <p className="text-cyan-400 text-xl">{t('loading_menu')}</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-black text-white">
-      {/* Header */}
-      <header className="bg-gradient-to-r from-purple-900/80 via-black to-purple-900/80 backdrop-blur-sm pb-2 pt-8 border-b border-cyan-500/20">
-        {/* <div className="container mx-auto px-4 text-center">
-          <div className="mb-6">
-            <div className="inline-flex items-center gap-3 mb-4">
-            
-              <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-2xl flex items-center justify-center shadow-2xl shadow-cyan-500/40 border border-cyan-400/50">
-                <span className="text-3xl">🍽️</span>
-              </div>
-              
-              <h1 className="text-5xl lg:text-6xl font-bold">
-                <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent animate-pulse">
-                  Sam's Club
-                </span>
-              </h1>
+    <div className="min-h-screen bg-black text-white relative">
+      {/* Overlay лоадер для 3D превью */}
+      {modelsLoading && (
+        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center">
+          <div className="text-center">
+            <div className="w-16 h-16 border-4 border-cyan-400 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+            <p className="text-cyan-400 text-xl mb-4">{t('loading_3d_previews')}</p>
+            <div className="w-80 bg-gray-800 rounded-full h-3 mx-auto">
+              <div className="bg-gradient-to-r from-cyan-400 to-purple-400 h-3 rounded-full animate-pulse" style={{width: '75%'}}></div>
             </div>
+            <p className="text-gray-400 text-sm mt-3">{t('preparing_3d_models')}</p>
           </div>
-        </div> */}
+        </div>
+      )}
+      
+      {/* Лоадер для смены категории */}
+      {categoryLoading && (
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 flex items-center justify-center">
+          <div className="bg-black/80 backdrop-blur-sm p-6 rounded-2xl border border-cyan-500/30">
+            <div className="w-12 h-12 border-4 border-cyan-400 border-t-transparent rounded-full animate-spin mx-auto"></div>
+          </div>
+        </div>
+      )}
+      {/* Header */}
+      <header className="bg-gradient-to-r from-purple-900/80 via-black to-purple-900/80 backdrop-blur-sm py-4 border-b border-cyan-500/20">
+        <div className="container mx-auto px-4 flex w-full justify-center items-center">
+        
+          <LanguageSwitcher />
+        </div>
       </header>
 
 
@@ -182,36 +246,51 @@ export default function Home() {
                 setCanScrollRight(target.scrollLeft < target.scrollWidth - target.clientWidth);
               }}
             >
-              {categories.map((category) => (
-                <button
-                  key={category.id}
-                  onClick={() => setSelectedCategory(category.id)}
-                  className={`flex-shrink-0 px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 border whitespace-nowrap ${
-                    selectedCategory === category.id
-                      ? 'bg-gradient-to-r from-cyan-500 to-purple-500 text-white  border-cyan-400/50 hover:shadow-cyan-500/60'
-                      : 'bg-gray-900/60 backdrop-blur-sm text-gray-300 hover:bg-gray-800/80 hover:text-cyan-400 border-gray-700/50 hover:border-cyan-500/30 hover:shadow-lg hover:shadow-cyan-500/20'
-                  }`}
-                >
-                  <span className="flex items-center gap-2">
-                    <span className="text-lg">
-                      {category.id === 'all' ? '🍽️' :
-                       category.id === 'drinks' ? '🍸' :
-                       category.id === 'salads' ? '🥗' :
-                       category.id === 'food' ? '🍽️' :
-                       category.id === 'desserts' ? '🍰' :
-                       category.id === 'Pasta' ? '🍝' :
-                       category.id === 'Noodles' ? '🍜' :
-                       category.id === 'Pizza' ? '🍕' :
-                       category.id === 'Toasts & Sandwiches' ? '🥪' :
-                       category.id === 'Burgers' ? '🍔' :
-                       category.id === 'Rolls' ? '🌯' :
-                       category.id === 'Soups' ? '🥣' :
-                       category.id === 'Snacks' ? '🍿' : '🍴'}
+              {categories.map((category) => {
+                const categoryKey = category.id.toLowerCase();
+                const categoryName = typeof category.name === 'object' ? category.name[language] || category.name.en : t(categoryKey);
+                
+                return (
+                  <button
+                    key={category.id}
+                    onClick={async () => {
+                      if (category.id !== selectedCategory) {
+                        setCategoryLoading(true);
+                        
+                        // Показываем лоадер перед сменой категории
+                        await new Promise(resolve => setTimeout(resolve, 200));
+                        
+                        setSelectedCategory(category.id);
+                        
+                        // Дополнительная задержка для плавности
+                        setTimeout(() => {
+                          setCategoryLoading(false);
+                        }, 100);
+                      }
+                    }}
+                    className={`flex-shrink-0 px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 border whitespace-nowrap ${
+                      selectedCategory === category.id
+                        ? 'bg-gradient-to-r from-cyan-500 to-purple-500 text-white  border-cyan-400/50 hover:shadow-cyan-500/60'
+                        : 'bg-gray-900/60 backdrop-blur-sm text-gray-300 hover:bg-gray-800/80 hover:text-cyan-400 border-gray-700/50 hover:border-cyan-500/30 hover:shadow-lg hover:shadow-cyan-500/20'
+                    }`}
+                  >
+                    <span className="flex items-center gap-2">
+                      <span className="text-lg">
+                        {category.id === 'salads' ? '🥗' :
+                         category.id === 'Pasta' ? '🍝' :
+                         category.id === 'Noodles' ? '🍜' :
+                         category.id === 'Pizza' ? '🍕' :
+                         category.id === 'Toasts & Sandwiches' ? '🥪' :
+                         category.id === 'Burgers' ? '🍔' :
+                         category.id === 'Rolls' ? '🌯' :
+                         category.id === 'Soups' ? '🍲' :
+                         category.id === 'Snacks' ? '🍿' : '🍽️'}
+                      </span>
+                      <span>{categoryName}</span>
                     </span>
-                    <span>{category.name}</span>
-                  </span>
-                </button>
-              ))}
+                  </button>
+                );
+              })}
             </div>
             
             {/* Правая стрелка навигации */}
@@ -258,47 +337,14 @@ export default function Home() {
                 <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-all duration-500"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 
-                {/* Image or 3D Icon */}
-                {item.category === 'salads' ? (
-                  // Show sample image for salads
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-full h-full bg-gradient-to-br from-green-400/80 via-green-600/80 to-green-800/80 flex items-center justify-center">
-                      <div className="text-6xl">🥗</div>
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-                    </div>
-                  </div>
-                ) : item.category === 'pizza' ? (
-                  // Show sample image for pizza
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-full h-full bg-gradient-to-br from-red-400/80 via-red-600/80 to-red-800/80 flex items-center justify-center">
-                      <div className="text-6xl">🍕</div>
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-                    </div>
-                  </div>
-                ) : item.category === 'burgers' ? (
-                  // Show sample image for burgers
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-full h-full bg-gradient-to-br from-yellow-400/80 via-yellow-600/80 to-yellow-800/80 flex items-center justify-center">
-                      <div className="text-6xl">🍔</div>
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-                    </div>
-                  </div>
-                ) : (
-                  // Show 3D icon for other categories
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-7xl opacity-60 group-hover:opacity-90 transition-all duration-500 transform group-hover:scale-110 filter drop-shadow-lg">
-                      {item.category === 'drinks' ? '🍸' : 
-                       item.category === 'food' ? '🍽️' : 
-                       item.category === 'desserts' ? '🍰' :
-                       item.category === 'pasta' ? '🍝' :
-                       item.category === 'noodles' ? '🍜' :
-                       item.category === 'toasts' ? '🥪' :
-                       item.category === 'rolls' ? '🌯' :
-                       item.category === 'soups' ? '🥣' :
-                       item.category === 'snacks' ? '🍿' : '🍴'}
-                    </div>
-                  </div>
-                )}
+                {/* 3D Model Preview */}
+                <div className="absolute inset-0">
+                  <Model3DPreview 
+                    modelPath={item.modelPath}
+                    mtlPath={item.mtlPath}
+                    className="opacity-80 group-hover:opacity-100 transition-all duration-500"
+                  />
+                </div>
                 
                 {/* 3D Badge */}
                 <div className="absolute top-4 right-4 bg-gradient-to-r from-cyan-500/90 to-purple-500/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full border border-white/20">
@@ -316,9 +362,11 @@ export default function Home() {
               {/* Content */}
               <div className="p-5">
                 <h3 className="text-lg font-bold mb-2 text-white group-hover:text-cyan-400 transition-colors duration-300 line-clamp-1">
-                  {item.name}
+                  {typeof item.name === 'object' ? item.name[language] || item.name.en : item.name}
                 </h3>
-                <p className="text-gray-400 text-sm mb-4 line-clamp-2 leading-relaxed">{item.description}</p>
+                <p className="text-gray-400 text-sm mb-4 line-clamp-2 leading-relaxed">
+                  {typeof item.description === 'object' ? item.description[language] || item.description.en : item.description}
+                </p>
                 
                 {/* Price */}
                 <div className="mb-4">
@@ -331,7 +379,7 @@ export default function Home() {
                 <Link href={`/view/${item.id}`}>
                   <button className="w-full bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 text-white font-semibold py-3 px-4 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/40 border border-cyan-500/20 hover:border-cyan-400/40 group/btn">
                     <span className="flex items-center justify-center gap-2">
-                      <span>View in 3D</span>
+                      <span>{t('view_in_3d')}</span>
                       <span className="text-lg group-hover/btn:translate-x-1 transition-transform duration-300">→</span>
                     </span>
                   </button>
@@ -343,10 +391,15 @@ export default function Home() {
 
         {filteredItems.length === 0 && (
           <div className="text-center py-16">
-            <p className="text-gray-400 text-xl">Блюда в данной категории не найдены</p>
+            <p className="text-gray-400 text-xl">{t('no_items_found')}</p>
           </div>
         )}
       </div>
+      
+      {/* Cache Loading Indicator */}
+      <CacheLoadingIndicator />
+      
+
     </div>
   );
 }

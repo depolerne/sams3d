@@ -1,720 +1,283 @@
 {
   "categories": [
     {
-      "id": "all",
-      "name": "All",
-      "items": [
-        {
-          "id": "chicken-popcorn-salad",
-          "name": "Chicken Popcorn Salad",
-          "description": "Iceberg lettuce, tomatoes, cucumber, mixed greens, chicken popcorns, special sauce",
-          "price": "15 AZN",
-          "modelPath": "/models/salad_toyuq.obj",
-          "mtlPath": "/models/textures/salads/salad_toyuq/salad_toyuq.mtl",
-          "category": "salads"
-        },
-        {
-          "id": "salad-caesar",
-          "name": "Classic Caesar with Chicken",
-          "description": "Iceberg lettuce, breadcrumbs, chicken, caesar sauce, cherry tomatoes, parmesan cheese",
-          "price": "11 AZN",
-          "modelPath": "/models/salad_caesar.obj",
-          "mtlPath": "/models/textures/salads/salad_caesar/salad_caesar.mtl",
-          "category": "salads"
-        },
-        {
-          "id": "salad-caesar-with-shrimps",
-          "name": "Salad Caesar with Shrimps",
-          "description": "Iceberg lettuce, breadcrumbs, caesar sauce, cherry tomatoes, parmesan cheese, shrimps",
-          "price": "15 AZN",
-          "modelPath": "/models/salad_caesar_shrimps.obj",
-          "mtlPath": "/models/textures/salads/salad_caesar_shrimps/salad_caesar_shrimps.mtl",
-          "category": "salads"
-        },
-        {
-          "id": "chicken-salad",
-          "name": "Chicken Salad",
-          "description": "Iceberg lettuce, tomatoes, cucumber, lettuce, garlic, onion rings, cabbage, chicken, special sauce",
-          "price": "14 AZN",
-          "modelPath": "/models/chicken_salad.obj",
-          "mtlPath": "/models/textures/salads/chicken_salad/chicken_salad.mtl",
-          "category": "salads"
-        },
-        {
-          "id": "cheese-salad",
-          "name": "Cheese Salad",
-          "description": "Tomatoes, cucumber, red pepper, green pepper, iceberg lettuce, red cabbage, lettuce, egg",
-          "price": "11 AZN",
-          "modelPath": "/models/cheese_salad.obj",
-          "mtlPath": "/models/textures/salads/cheese_salad/cheese_salad.mtl",
-          "category": "salads"
-        },
-        {
-          "id": "shrimp-popcorn",
-          "name": "Shrimp Popcorn",
-          "description": "Iceberg lettuce, tomatoes, cucumber, mixed greens, shrimps popcorn, special sauce",
-          "price": "17 AZN",
-          "modelPath": "/models/shrimp_popcorn.obj",
-          "mtlPath": "/models/textures/snacks/shrimp_popcorn/shrimp_popcorn.mtl",
-          "category": "salads"
-        },
-        {
-          "id": "tuna-salad",
-          "name": "Tuna Salad",
-          "description": "Tuna, tomatoes, cucumber, lettuce, egg, corn, olives, special sauce",
-          "price": "15 AZN",
-          "modelPath": "/models/tuna_salad.obj",
-          "mtlPath": "/models/textures/salads/tuna_salad/tuna_salad.mtl",
-          "category": "salads"
-        },
-        {
-          "id": "salad-avocado-shrimps",
-          "name": "Salad Avocado with Shrimps",
-          "description": "Avocado, tomatoes, cucumber, lettuce, shrimps, parmesan cheese, special sauce",
-          "price": "17 AZN",
-          "modelPath": "/models/salad_avocado_shrimps.obj",
-          "mtlPath": "/models/textures/salads/salad_avocado_shrimps/salad_avocado_shrimps.mtl",
-          "category": "salads"
-        },
-        {
-          "id": "pasta-fettuccine",
-          "name": "Fettuccine",
-          "description": "Fettuccine pasta with creamy sauce",
-          "price": "12 AZN",
-          "modelPath": "/models/pasta_fettuccine.obj",
-          "mtlPath": "/models/textures/pasta/pasta_fettuccine/pasta_fettuccine.mtl",
-          "category": "pasta"
-        },
-        {
-          "id": "pasta-meat",
-          "name": "Pasta with Meat",
-          "description": "Pasta with meat sauce",
-          "price": "14 AZN",
-          "modelPath": "/models/pasta_meat.obj",
-          "mtlPath": "/models/textures/pasta/pasta_meat/pasta_meat.mtl",
-          "category": "pasta"
-        },
-        {
-          "id": "noodles-chicken",
-          "name": "Noodles with Chicken",
-          "description": "Noodles with chicken and vegetables",
-          "price": "13 AZN",
-          "modelPath": "/models/noodles_chicken.obj",
-          "mtlPath": "/models/textures/noodles/noodles_chicken/noodles_chicken.mtl",
-          "category": "noodles"
-        },
-        {
-          "id": "noodles-shrimps",
-          "name": "Noodles with Shrimps",
-          "description": "Noodles with shrimps and vegetables",
-          "price": "15 AZN",
-          "modelPath": "/models/noodles_shrimps.obj",
-          "mtlPath": "/models/textures/noodles/noodles_shrimps/noodles_shrimps.mtl",
-          "category": "noodles"
-        },
-        {
-          "id": "pizza-margarita",
-          "name": "Pizza Margarita",
-          "description": "Classic margarita pizza with tomato sauce and mozzarella",
-          "price": "18 AZN",
-          "modelPath": "/models/pizza_margarita.obj",
-          "mtlPath": "/models/textures/pizza/pizza_margarita/pizza_margarita.mtl",
-          "category": "pizza"
-        },
-        {
-          "id": "pizza-pepperoni",
-          "name": "Pizza Pepperoni",
-          "description": "Pizza with pepperoni, tomato sauce and cheese",
-          "price": "20 AZN",
-          "modelPath": "/models/pizza_pepperoni.obj",
-          "mtlPath": "/models/textures/pizza/pizza_pepperoni/pizza_pepperoni.mtl",
-          "category": "pizza"
-        },
-        {
-          "id": "mix-pizza",
-          "name": "Mix Pizza",
-          "description": "Mixed pizza with various toppings",
-          "price": "22 AZN",
-          "modelPath": "/models/mix_pizza.obj",
-          "mtlPath": "/models/textures/pizza/mix_pizza/mix_pizza.mtl",
-          "category": "pizza"
-        },
-        {
-          "id": "pizza-chicken",
-          "name": "Pizza with Chicken",
-          "description": "Pizza with chicken, vegetables and cheese",
-          "price": "21 AZN",
-          "modelPath": "/models/pizza_chicken.obj",
-          "mtlPath": "/models/textures/pizza/pizza_chicken/pizza_chicken.mtl",
-          "category": "pizza"
-        },
-        {
-          "id": "pizza-caesar",
-          "name": "Pizza Caesar",
-          "description": "Pizza with caesar sauce, chicken and vegetables",
-          "price": "23 AZN",
-          "modelPath": "/models/pizza_caesar.obj",
-          "mtlPath": "/models/textures/pizza/pizza_caesar/pizza_caesar.mtl",
-          "category": "pizza"
-        },
-        {
-          "id": "toast-cheese",
-          "name": "Cheese Toast",
-          "description": "Toast with melted cheese",
-          "price": "8 AZN",
-          "modelPath": "/models/toast_cheese.obj",
-          "mtlPath": "/models/textures/toasts/toast_cheese/toast_cheese.mtl",
-          "category": "toasts"
-        },
-        {
-          "id": "chicken-toast",
-          "name": "Chicken Toast",
-          "description": "Toast with chicken and vegetables",
-          "price": "10 AZN",
-          "modelPath": "/models/chicken_toast.obj",
-          "mtlPath": "/models/textures/toasts/chicken_toast/chicken_toast.mtl",
-          "category": "toasts"
-        },
-        {
-          "id": "sausage-toast",
-          "name": "Sausage Toast",
-          "description": "Toast with sausage and cheese",
-          "price": "9 AZN",
-          "modelPath": "/models/sausage_toast.obj",
-          "mtlPath": "/models/textures/toasts/sausage_toast/sausage_toast.mtl",
-          "category": "toasts"
-        },
-        {
-          "id": "mix-toast",
-          "name": "Mix Toast",
-          "description": "Mixed toast with various ingredients",
-          "price": "11 AZN",
-          "modelPath": "/models/mix_toast.obj",
-          "mtlPath": "/models/textures/toasts/mix_toast/mix_toast.mtl",
-          "category": "toasts"
-        },
-        {
-          "id": "sandwich-chicken",
-          "name": "Chicken Sandwich",
-          "description": "Sandwich with chicken, vegetables and sauce",
-          "price": "12 AZN",
-          "modelPath": "/models/sandwich_chicken.obj",
-          "mtlPath": "/models/textures/sandwiches/sandwich_chicken/sandwich_chicken.mtl",
-          "category": "toasts"
-        },
-        {
-          "id": "sandwich-meat",
-          "name": "Meat Sandwich",
-          "description": "Sandwich with meat, vegetables and sauce",
-          "price": "13 AZN",
-          "modelPath": "/models/sandwich_meat.obj",
-          "mtlPath": "/models/textures/sandwiches/sandwich_meat/sandwich_meat.mtl",
-          "category": "toasts"
-        },
-        {
-          "id": "club-sandwich",
-          "name": "Club Sandwich",
-          "description": "Classic club sandwich with multiple layers",
-          "price": "15 AZN",
-          "modelPath": "/models/club_sandwich.obj",
-          "mtlPath": "/models/textures/sandwiches/club_sandwich/club_sandwich.mtl",
-          "category": "toasts"
-        },
-        {
-          "id": "burger-chicken",
-          "name": "Chicken Burger",
-          "description": "Burger with chicken patty, vegetables and sauce",
-          "price": "14 AZN",
-          "modelPath": "/models/burger_chicken.obj",
-          "mtlPath": "/models/textures/burgers/burger_chicken/burger_chicken.mtl",
-          "category": "burgers"
-        },
-        {
-          "id": "burger-meat",
-          "name": "Meat Burger",
-          "description": "Burger with meat patty, vegetables and sauce",
-          "price": "16 AZN",
-          "modelPath": "/models/burger_meat.obj",
-          "mtlPath": "/models/textures/burgers/burger_meat/burger_meat.mtl",
-          "category": "burgers"
-        },
-        {
-          "id": "special-burger",
-          "name": "Special Burger",
-          "description": "Special burger with premium ingredients",
-          "price": "18 AZN",
-          "modelPath": "/models/special_burger.obj",
-          "mtlPath": "/models/textures/burgers/special_burger/special_burger.mtl",
-          "category": "burgers"
-        },
-        {
-          "id": "burger-set-chicken",
-          "name": "Chicken Burger Set",
-          "description": "Chicken burger with fries and drink",
-          "price": "20 AZN",
-          "modelPath": "/models/burger_set_chicken.obj",
-          "mtlPath": "/models/textures/burgers/burger_set_chicken/burger_set_chicken.mtl",
-          "category": "burgers"
-        },
-        {
-          "id": "burger-set-meat",
-          "name": "Meat Burger Set",
-          "description": "Meat burger with fries and drink",
-          "price": "22 AZN",
-          "modelPath": "/models/burger_set_meat.obj",
-          "mtlPath": "/models/textures/burgers/burger_set_meat/burger_set_meat.mtl",
-          "category": "burgers"
-        },
-        {
-          "id": "roll-chicken",
-          "name": "Chicken Roll",
-          "description": "Roll with chicken and vegetables",
-          "price": "11 AZN",
-          "modelPath": "/models/roll_chicken.obj",
-          "mtlPath": "/models/textures/rolls/roll_chicken/roll_chicken.mtl",
-          "category": "rolls"
-        },
-        {
-          "id": "roll-caesar",
-          "name": "Caesar Roll",
-          "description": "Roll with caesar sauce and chicken",
-          "price": "12 AZN",
-          "modelPath": "/models/roll_caesar.obj",
-          "mtlPath": "/models/textures/rolls/roll_caesar/roll_caesar.mtl",
-          "category": "rolls"
-        },
-        {
-          "id": "roll-tikka",
-          "name": "Tikka Roll",
-          "description": "Roll with tikka sauce and chicken",
-          "price": "13 AZN",
-          "modelPath": "/models/roll_tikka.obj",
-          "mtlPath": "/models/textures/rolls/roll_tikka/roll_tikka.mtl",
-          "category": "rolls"
-        },
-        {
-          "id": "lentil-soup",
-          "name": "Lentil Soup",
-          "description": "Hearty lentil soup with vegetables",
-          "price": "9 AZN",
-          "modelPath": "/models/lentil_soup.obj",
-          "mtlPath": "/models/textures/soups/lentil_soup/lentil_soup.mtl",
-          "category": "soups"
-        },
-        {
-          "id": "tomato-soup",
-          "name": "Tomato Soup",
-          "description": "Fresh tomato soup with herbs",
-          "price": "8 AZN",
-          "modelPath": "/models/tomato_soup.obj",
-          "mtlPath": "/models/textures/soups/tomato_soup/tomato_soup.mtl",
-          "category": "soups"
-        },
-        {
-          "id": "mushroom-soup",
-          "name": "Mushroom Soup",
-          "description": "Creamy mushroom soup",
-          "price": "10 AZN",
-          "modelPath": "/models/mushroom_soup.obj",
-          "mtlPath": "/models/textures/soups/mushroom_soup/mushroom_soup.mtl",
-          "category": "soups"
-        },
-        {
-          "id": "fries",
-          "name": "French Fries",
-          "description": "Crispy french fries",
-          "price": "4 AZN",
-          "modelPath": "/models/fries.obj",
-          "mtlPath": "/models/textures/snacks/fries/fries.mtl",
-          "category": "snacks"
-        },
-        {
-          "id": "chips",
-          "name": "Potato Chips",
-          "description": "Crispy potato chips",
-          "price": "3 AZN",
-          "modelPath": "/models/chips.obj",
-          "mtlPath": "/models/textures/snacks/chips/chips.mtl",
-          "category": "snacks"
-        },
-        {
-          "id": "nachos",
-          "name": "Nachos",
-          "description": "Crispy nachos with salsa",
-          "price": "6 AZN",
-          "modelPath": "/models/nachos.obj",
-          "mtlPath": "/models/textures/snacks/nachos/nachos.mtl",
-          "category": "snacks"
-        },
-        {
-          "id": "nachos-cheese",
-          "name": "Nachos with Cheese",
-          "description": "Nachos with melted cheese",
-          "price": "7 AZN",
-          "modelPath": "/models/nachos_cheese.obj",
-          "mtlPath": "/models/textures/snacks/nachos_cheese/nachos_cheese.mtl",
-          "category": "snacks"
-        },
-        {
-          "id": "chicken-popcorn",
-          "name": "Chicken Popcorn",
-          "description": "Crispy chicken popcorn",
-          "price": "8 AZN",
-          "modelPath": "/models/chicken_popcorn.obj",
-          "mtlPath": "/models/textures/snacks/chicken_popcorn/chicken_popcorn.mtl",
-          "category": "snacks"
-        },
-        {
-          "id": "sunflower-seeds",
-          "name": "Sunflower Seeds",
-          "description": "Roasted sunflower seeds",
-          "price": "2 AZN",
-          "modelPath": "/models/sunflower_seeds.obj",
-          "mtlPath": "/models/textures/snacks/sunflower_seeds/sunflower_seeds.mtl",
-          "category": "snacks"
-        },
-        {
-          "id": "crackers",
-          "name": "Crackers",
-          "description": "Crispy crackers",
-          "price": "3 AZN",
-          "modelPath": "/models/crackers.obj",
-          "mtlPath": "/models/textures/snacks/crackers/crackers.mtl",
-          "category": "snacks"
-        },
-        {
-          "id": "croutons",
-          "name": "Croutons",
-          "description": "Crispy bread croutons",
-          "price": "2 AZN",
-          "modelPath": "/models/croutons.obj",
-          "mtlPath": "/models/textures/snacks/croutons/croutons.mtl",
-          "category": "snacks"
-        },
-        {
-          "id": "string_cheese",
-          "name": "String Cheese",
-          "description": "String cheese sticks",
-          "price": "4 AZN",
-          "price": "4 AZN",
-          "modelPath": "/models/string_cheese.obj",
-          "mtlayout": "/models/textures/snacks/string_cheese/string_cheese.mtl",
-          "category": "snacks"
-        },
-        {
-          "id": "peas",
-          "name": "Peas",
-          "description": "Fresh green peas",
-          "price": "3 AZN",
-          "modelPath": "/models/peas.obj",
-          "mtlPath": "/models/textures/snacks/peas/peas.mtl",
-          "category": "snacks"
-        },
-        {
-          "id": "fried-peas",
-          "name": "Fried Peas",
-          "description": "Crispy fried peas",
-          "price": "4 AZN",
-          "modelPath": "/models/fried_peas.obj",
-          "mtlPath": "/models/textures/snacks/fried_peas/fried_peas.mtl",
-          "category": "snacks"
-        },
-        {
-          "id": "mozarella-sticks",
-          "name": "Mozzarella Sticks",
-          "description": "Crispy mozzarella cheese sticks",
-          "price": "6 AZN",
-          "modelPath": "/models/mozarella_sticks.obj",
-          "mtlPath": "/models/textures/snacks/mozarella_sticks/mozarella_sticks.mtl",
-          "category": "snacks"
-        },
-        {
-          "id": "fried_dumplings",
-          "name": "Fried Dumplings",
-          "description": "Crispy fried dumplings",
-          "price": "5 AZN",
-          "modelPath": "/models/fried_dumplings.obj",
-          "mtlPath": "/models/textures/snacks/fried_dumplings/fried_dumplings.mtl",
-          "category": "snacks"
-        },
-        {
-          "id": "peanuts",
-          "name": "Peanuts",
-          "description": "Roasted peanuts",
-          "price": "3 AZN",
-          "modelPath": "/models/peanuts.obj",
-          "mtlPath": "/models/textures/snacks/peanuts/peanuts.mtl",
-          "category": "snacks"
-        },
-        {
-          "id": "fried-mushrooms",
-          "name": "Fried Mushrooms",
-          "description": "Crispy fried mushrooms",
-          "price": "5 AZN",
-          "modelPath": "/models/fried_mushrooms.obj",
-          "mtlPath": "/models/textures/snacks/fried_mushrooms/fried_mushrooms.mtl",
-          "category": "snacks"
-        },
-        {
-          "id": "corn-dog",
-          "name": "Corn Dog",
-          "description": "Dough, Sausage",
-          "price": "5 AZN",
-          "modelPath": "/models/corn_dog.obj",
-          "mtlPath": "/models/textures/snacks/corn_dog/corn_dog.mtl",
-          "category": "snacks"
-        },
-        {
-          "id": "nuggets-fries",
-          "name": "Nuggets with Fries",
-          "description": "ChickenNuggets, Fries",
-          "price": "5 AZN",
-          "modelPath": "/models/nuggets_fries.obj",
-          "mtlPath": "/models/textures/snacks/nuggets_fries/nuggets_fries.mtl",
-          "category": "snacks"
-        },
-        {
-          "id": "nuggets",
-          "name": "Nuggets",
-          "description": "Chicken Nuggets",
-          "price": "5 AZN",
-          "modelPath": "/models/nuggets.obj",
-          "mtlPath": "/models/textures/snacks/nuggets/nuggets.mtl",
-          "category": "snacks"
-        },
-        {
-          "id": "chicken-throat",
-          "name": "Chicken Throat",
-          "description": "Chicken Throat",
-          "price": "5 AZN",
-          "modelPath": "/models/chicken_throat.obj",
-          "mtlPath": "/models/textures/snacks/chicken_throat/chicken_throat.mtl",
-          "category": "snacks"
-        },
-        {
-          "id": "chicken-stomach",
-          "name": "Chicken Stomach",
-          "description": "Chicken Stomach",
-          "price": "5 AZN",
-          "modelPath": "/models/chicken_stomach.obj",
-          "mtlPath": "/models/textures/snacks/chicken_stomach/chicken_stomach.mtl",
-          "category": "snacks"
-        },
-        {
-          "id": "olives",
-          "name": "Olives",
-          "description": "Olives",
-          "price": "4 AZN",
-          "modelPath": "/models/olives.obj",
-          "mtlPath": "/models/textures/snacks/olives/olives.mtl",
-          "category": "snacks"
-        },
-        {
-          "id": "chicken-langet",
-          "name": "Chicken Langet",
-          "description": "Chicken Langet",
-          "price": "8 AZN",
-          "modelPath": "/models/chicken_langet.obj",
-          "mtlPath": "/models/textures/other/chicken_langet/chicken_langet.mtl",
-          "category": "other"
-        },
-        {
-          "id": "chicken_rice",
-          "name": "Chicken with Rice",
-          "description": "Chicken, rice, vegetables, spices",
-          "price": "8 AZN",
-          "modelPath": "/models/chicken_rice.obj",
-          "mtlPath": "/models/textures/other/chicken_rice/chicken_rice.mtl",
-          "category": "other"
-        }
-      ]
-    },
-    {
       "id": "salads",
-      "name": "Salads",
+      "name": {
+        "en": "Salads",
+        "ru": "Салаты",
+        "az": "Salatlar"
+      },
       "items": [
         {
           "id": "chicken-popcorn-salad",
-          "name": "Chicken Popcorn Salad",
-          "description": "Iceberg lettuce, tomatoes, cucumber, mixed greens, chicken popcorns, special sauce",
+          "name": {
+            "en": "Chicken Popcorn Salad",
+            "ru": "Салат с куриными попкорнами",
+            "az": "Toyuq popkorn salatı"
+          },
+          "description": {
+            "en": "Iceberg lettuce, tomatoes, cucumber, mixed greens, chicken popcorns, special sauce",
+            "ru": "Салат айсберг, помидоры, огурцы, смешанная зелень, куриные попкорны, специальный соус",
+            "az": "Aysberq salatı, pomidor, xiyar, qarışıq göyərti, toyuq popkornları, xüsusi sous"
+          },
           "price": "15 AZN",
           "modelPath": "/models/salad_toyuq.obj",
           "mtlPath": "/models/textures/salads/salad_toyuq/salad_toyuq.mtl",
           "category": "salads"
-        }, 
-
+        },
         {
           "id": "salad-caesar",
-          "name": "Classic Caesar with Chicken",
-          "description": "Iceberg lettuce, breadcrumbs, chicken, caesar sauce, cherry tomatoes, parmesan cheese",
+          "name": {
+            "en": "Classic Caesar with Chicken",
+            "ru": "Классический Цезарь с курицей",
+            "az": "Toyuqlu klassik Sezar"
+          },
+          "description": {
+            "en": "Iceberg lettuce, breadcrumbs, chicken, caesar sauce, cherry tomatoes, parmesan cheese",
+            "ru": "Салат айсберг, сухарики, курица, соус цезарь, черри помидоры, пармезан",
+            "az": "Aysberq salatı, çörək qırıntıları, toyuq, sezar sousu, çerri pomidor, parmezan"
+          },
           "price": "11 AZN",
           "modelPath": "/models/salad_caesar.obj",
           "mtlPath": "/models/textures/salads/salad_caesar/salad_caesar.mtl",
           "category": "salads"
         },
-
         {
-          "id": "salad-caesar-with-shrimps",
-          "name": "Salad Caesar with Shrimps",
-          "description": "Iceberg lettuce, breadcrumbs, caesar sauce, cherry tomatoes, parmesan cheese, shrimps",
-          "price": "15 AZN",
+          "id": "salad-caesar-shrimps",
+          "name": {
+            "en": "Caesar Salad with Shrimps",
+            "ru": "Цезарь с креветками",
+            "az": "Karideslə Sezar salatı"
+          },
+          "description": {
+            "en": "Iceberg lettuce, breadcrumbs, shrimps, caesar sauce, cherry tomatoes, parmesan cheese",
+            "ru": "Салат айсберг, сухарики, креветки, соус цезарь, черри помидоры, пармезан",
+            "az": "Aysberq salatı, çörək qırıntıları, karideslər, sezar sousu, çerri pomidor, parmezan"
+          },
+          "price": "14 AZN",
           "modelPath": "/models/salad_caesar_shrimps.obj",
           "mtlPath": "/models/textures/salads/salad_caesar_shrimps/salad_caesar_shrimps.mtl",
           "category": "salads"
         },
-
         {
           "id": "chicken-salad",
-          "name": "Chicken Salad",
-          "description": "Iceberg lettuce, tomatoes, cucumber, lettuce, garlic, onion rings, cabbage, chicken, special sauce",
-          "price": "14 AZN",
+          "name": {
+            "en": "Chicken Salad",
+            "ru": "Куриный салат",
+            "az": "Toyuq salatı"
+          },
+          "description": {
+            "en": "Fresh lettuce, grilled chicken, tomatoes, cucumber, special dressing",
+            "ru": "Свежий салат, жареная курица, помидоры, огурцы, специальная заправка",
+            "az": "Təzə salat, qızardılmış toyuq, pomidor, xiyar, xüsusi sous"
+          },
+          "price": "12 AZN",
           "modelPath": "/models/chicken_salad.obj",
           "mtlPath": "/models/textures/salads/chicken_salad/chicken_salad.mtl",
           "category": "salads"
         },
-
         {
           "id": "cheese-salad",
-          "name": "Cheese Salad",
-          "description": "Tomatoes, cucumber, red pepper, green pepper, iceberg lettuce, red cabbage, lettuce, egg",
-          "price": "11 AZN",
+          "name": {
+            "en": "Cheese Salad",
+            "ru": "Сырный салат",
+            "az": "Pendir salatı"
+          },
+          "description": {
+            "en": "Mixed greens, various cheeses, nuts, honey dressing",
+            "ru": "Смешанная зелень, различные сыры, орехи, медовая заправка",
+            "az": "Qarışıq göyərti, müxtəlif pendi, qoz, bal sousu"
+          },
+          "price": "10 AZN",
           "modelPath": "/models/cheese_salad.obj",
           "mtlPath": "/models/textures/salads/cheese_salad/cheese_salad.mtl",
           "category": "salads"
-        }, 
-
-        {
-          "id": "shrimp-popcorn",
-          "name": "Shrimp Popcorn",
-          "description": "Iceberg lettuce, tomatoes, cucumber, mixed greens, shrimps popcorn, special sauce",
-          "price": "17 AZN",
-          "modelPath": "/models/shrimp_popcorn.obj",
-          "mtlPath": "/models/textures/salads/shrimp_popcorn/shrimp_popcorn.mtl",
-          "category": "salads"
         },
-
         {
           "id": "tuna-salad",
-          "name": "Tuna Salad",
-          "description": "Tuna, tomatoes, cucumber, lettuce, egg, corn, olives, special sauce",
-          "price": "15 AZN",
+          "name": {
+            "en": "Tuna Salad",
+            "ru": "Салат с тунцом",
+            "az": "Tuna salatı"
+          },
+          "description": {
+            "en": "Fresh tuna, mixed greens, tomatoes, olives, olive oil dressing",
+            "ru": "Свежий тунец, смешанная зелень, помидоры, оливки, заправка из оливкового масла",
+            "az": "Təzə tuna, qarışıq göyərti, pomidor, zeytun, zeytun yağı sousu"
+          },
+          "price": "16 AZN",
           "modelPath": "/models/tuna_salad.obj",
-          "mtlPath": "/models/textures/salads/tuna_salad/tuna_salad.mtl",
+          "mtlPath": "/models/textures/salads/salad_tuna/tuna_salad.mtl",
           "category": "salads"
         },
-
         {
-          "id": "salad-avocado-shrimps",
-          "name": "Salad Avocado with Shrimps",
-          "description": "Avocado, tomatoes, cucumber, lettuce, shrimps, parmesan cheese, special sauce",
-          "price": "17 AZN",
+          "id": "avocado-shrimps-salad",
+          "name": {
+            "en": "Avocado Shrimps Salad",
+            "ru": "Салат с авокадо и креветками",
+            "az": "Avokado və karides salatı"
+          },
+          "description": {
+            "en": "Fresh avocado, grilled shrimps, mixed greens, lime dressing",
+            "ru": "Свежий авокадо, жареные креветки, смешанная зелень, лаймовая заправка",
+            "az": "Təzə avokado, qızardılmış karideslər, qarışıq göyərti, laym sousu"
+          },
+          "price": "18 AZN",
           "modelPath": "/models/salad_avocado_shrimps.obj",
           "mtlPath": "/models/textures/salads/salad_avocado_shrimps/salad_avocado_shrimps.mtl",
           "category": "salads"
         }
       ]
     },
-
     {
-      "id": "Pasta",
-      "name": "Pasta",
+      "id": "pasta",
+      "name": {
+        "en": "Pasta",
+        "ru": "Паста",
+        "az": "Pasta"
+      },
       "items": [
         {
           "id": "pasta-fettuccine",
-          "name": "Pasta Fettuccine",
-          "description": "Fettuccine, chicken, milk, cream, mushrooms, parmesan cheese, alfredo sauce",
+          "name": {
+            "en": "Pasta Fettuccine",
+            "ru": "Паста Фетучини",
+            "az": "Fettuccine pastası"
+          },
+          "description": {
+            "en": "Fettuccine, chicken, milk, cream, mushrooms, parmesan cheese, alfredo sauce",
+            "ru": "Фетучини, курица, молоко, сливки, грибы, пармезан, соус альфредо",
+            "az": "Fettuccine, toyuq, süd, qaymaq, göbələk, parmezan, alfredo sousu"
+          },
           "price": "15 AZN",
           "modelPath": "/models/pasta_fettuccine.obj",
           "mtlPath": "/models/textures/pastas/pasta_fettuccine/pasta_fettuccine.mtl",
           "category": "pasta"
         },
-
         {
           "id": "pasta-meat",
-          "name": "Pasta with Meat",
-          "description": "Fettuccine, meat, parmesan cheese, speacial sauce",
-          "price": "15 AZN",
+          "name": {
+            "en": "Pasta with Meat",
+            "ru": "Паста с мясом",
+            "az": "Ətli pasta"
+          },
+          "description": {
+            "en": "Pasta with tender meat, tomato sauce, herbs and spices",
+            "ru": "Паста с нежным мясом, томатным соусом, травами и специями",
+            "az": "Zərif ətli pasta, pomidor sousu, otlar və ədviyyatlar"
+          },
+          "price": "17 AZN",
           "modelPath": "/models/pasta_meat.obj",
           "mtlPath": "/models/textures/pastas/pasta_meat/pasta_meat.mtl",
+          "category": "pasta"
+        },
+        {
+          "id": "noodles-chicken",
+          "name": {
+            "en": "Chicken Noodles",
+            "ru": "Лапша с курицей",
+            "az": "Toyuqlu əriştə"
+          },
+          "description": {
+            "en": "Asian style noodles with grilled chicken and vegetables",
+            "ru": "Лапша в азиатском стиле с жареной курицей и овощами",
+            "az": "Asiya üslubunda əriştə, qızardılmış toyuq və tərəvəzlər"
+          },
+          "price": "14 AZN",
+          "modelPath": "/models/noodles_chicken.obj",
+          "mtlPath": "/models/textures/noodles/noodles_chicken/noodles_chicken.mtl",
+          "category": "pasta"
+        },
+        {
+          "id": "noodles-shrimps",
+          "name": {
+            "en": "Shrimp Noodles",
+            "ru": "Лапша с креветками",
+            "az": "Karidesli əriştə"
+          },
+          "description": {
+            "en": "Asian style noodles with fresh shrimps and vegetables",
+            "ru": "Лапша в азиатском стиле со свежими креветками и овощами",
+            "az": "Asiya üslubunda əriştə, təzə karideslər və tərəvəzlər"
+          },
+          "price": "16 AZN",
+          "modelPath": "/models/noodles_shrimps.obj",
+          "mtlPath": "/models/textures/noodles/noodles_shrimps/noodles_shrimps.mtl",
           "category": "pasta"
         }
       ]
     },
-
     {
-      "id": "Noodles",
-      "name": "Noodles",
-      "items": [
-        {
-          "id": "noodles-chicken",
-          "name": "Noodles with Chicken",
-          "description": "Noodles, chicken,carrot, green pepper, onion, sesame, special sauce",
-          "price": "12 AZN",
-          "modelPath": "/models/noodles_chicken.obj",
-          "mtlPath": "/models/textures/noodles/noodles_chicken/noodles_chicken.mtl",
-          "category": "noodles"
-        },
-
-        {
-          "id": "noodles-shrimps",
-          "name": "Noodles with Shrimps",
-          "description": "Noodles, shrimps, carrot, green pepper, onion, sesame, special sauce",
-          "price": "17 AZN",
-          "modelPath": "/models/noodles_shrimps.obj",
-          "mtlPath": "/models/textures/noodles/noodles_shrimps/noodles_shrimps.mtl",
-          "category": "noodles"
-        }
-      ]
-    },
-
-    {
-      "id": "Pizza",
-      "name": "Pizza",
+      "id": "pizza",
+      "name": {
+        "en": "Pizza",
+        "ru": "Пицца",
+        "az": "Pizza"
+      },
       "items": [
         {
           "id": "pizza-margarita",
-          "name": "Pizza Margarita",
-          "description": "Pizza dough, tomato sauce, mozzarella cheese, tomatoes, sesame",
+          "name": {
+            "en": "Pizza Margarita",
+            "ru": "Пицца Маргарита",
+            "az": "Marqarita pizzası"
+          },
+          "description": {
+            "en": "Pizza dough, tomato sauce, mozzarella cheese, tomatoes, sesame",
+            "ru": "Тесто для пиццы, томатный соус, моцарелла, помидоры, кунжут",
+            "az": "Pizza xəmiri, pomidor sousu, mozzarella, pomidor, küncüt"
+          },
           "price": "10 AZN",
-          "modelPath": "/models/pizza_margarita.obj",
-          "mtlPath": "/models/textures/pizzas/pizza_margarita/pizza_margarita.mtl",
+          "modelPath": "/models/mix_pizza.obj",
+          "mtlPath": "/models/textures/pizzas/pizza_margarita/10.08.2025.mtl",
           "category": "pizza"
         },
-
         {
           "id": "pizza-pepperoni",
-          "name": "Pizza Pepperoni",
-          "description": "Pizza dough, tomato sauce, mozzarella cheese, pepperoni, sesame",
+          "name": {
+            "en": "Pizza Pepperoni",
+            "ru": "Пицца Пепперони",
+            "az": "Pepperoni pizzası"
+          },
+          "description": {
+            "en": "Pizza dough, tomato sauce, mozzarella cheese, pepperoni, oregano",
+            "ru": "Тесто для пиццы, томатный соус, моцарелла, пепперони, орегано",
+            "az": "Pizza xəmiri, pomidor sousu, mozzarella, pepperoni, oregano"
+          },
           "price": "12 AZN",
           "modelPath": "/models/pizza_pepperoni.obj",
           "mtlPath": "/models/textures/pizzas/pizza_pepperoni/pizza_pepperoni.mtl",
           "category": "pizza"
         },
-
-        {
-          "id": "mix-pizza",
-          "name": "Mix Pizza",
-          "description": "Pizza dough, tomato sauce, mozarella cheese, chicken, sausages, green pepper, red pepper, mushrooms, corn, olives",
-          "price": "16 AZN",
-          "modelPath": "/models/mix_pizza.obj",
-          "mtlPath": "/models/textures/pizzas/mix_pizza/mix_pizza.mtl",
-          "category": "pizza"
-        },
-
         {
           "id": "pizza-chicken",
-          "name": "Chicken Pizza",
-          "description": "Pizza dough, tomato sauce, mozzarella cheese, chicken, mushrooms, sesame",
-          "price": "12 AZN",
+          "name": {
+            "en": "Pizza Chicken",
+            "ru": "Пицца с курицей",
+            "az": "Toyuqlu pizza"
+          },
+          "description": {
+            "en": "Pizza dough, tomato sauce, mozzarella cheese, grilled chicken, mushrooms",
+            "ru": "Тесто для пиццы, томатный соус, моцарелла, жареная курица, грибы",
+            "az": "Pizza xəmiri, pomidor sousu, mozzarella, qızardılmış toyuq, göbələk"
+          },
+          "price": "14 AZN",
           "modelPath": "/models/pizza_chicken.obj",
           "mtlPath": "/models/textures/pizzas/pizza_chicken/pizza_chicken.mtl",
           "category": "pizza"
         },
-
         {
           "id": "pizza-caesar",
-          "name": "Pizza Caesar",
-          "description": "Pizza dough, tomato sauce, mozzarella cheese, chicken, cherry tomatoes, lettuce, parmesan cheese, special sauce",
+          "name": {
+            "en": "Pizza Caesar",
+            "ru": "Пицца Цезарь",
+            "az": "Sezar pizzası"
+          },
+          "description": {
+            "en": "Pizza dough, caesar sauce, mozzarella cheese, chicken, lettuce, parmesan",
+            "ru": "Тесто для пиццы, соус цезарь, моцарелла, курица, салат, пармезан",
+            "az": "Pizza xəmiri, sezar sousu, mozzarella, toyuq, salat, parmezan"
+          },
           "price": "15 AZN",
           "modelPath": "/models/pizza_caesar.obj",
           "mtlPath": "/models/textures/pizzas/pizza_caesar/pizza_caesar.mtl",
@@ -722,168 +285,268 @@
         }
       ]
     },
-
     {
-      "id": "Toasts & Sandwiches",
-      "name": "Toasts & Sandwiches",
-      "items": [
-        {
-          "id": "toast-cheese",
-          "name": "Cheese Toast",
-          "description": "Toast bread, cheese, tomato sauce",
-          "price": "6 AZN",
-          "modelPath": "/models/cheese_toast.obj",
-          "mtlPath": "/models/textures/toasts_sandwiches/cheese_toast/cheese_toast.mtl",
-          "category": "toasts"
-        },
-
-        {
-          "id": "chicken-toast",
-          "name": "Chicken Toast",
-          "description": "Toast bread, cheese, chicken, tomato sauce",
-          "price": "7 AZN",
-          "modelPath": "/models/chicken_toast.obj",
-          "mtlPath": "/models/textures/toasts_sandwiches/chicken_toast/chicken_toast.mtl",
-          "category": "toasts"
-        },
-
-        {
-          "id": "sausage-toast",
-          "name": "Sausage Toast",
-          "description": "Toast bread, sausage, cheese, tomato sauce",
-          "price": "7 AZN",
-          "modelPath": "/models/sausage_toast.obj",
-          "mtlPath": "/models/textures/toasts_sandwiches/sausage_toast/sausage_toast.mtl",
-          "category": "toasts"
-        },
-
-        {
-          "id": "mix-toast",
-          "name": "Mix Toast",
-          "description": "Toast bread, cheese, chicken, sausage, tomato sauce",
-          "price": "8 AZN",
-          "modelPath": "/models/mix_toast.obj",
-          "mtlPath": "/models/textures/toasts_sandwiches/mix_toast/mix_toast.mtl",
-          "category": "toasts"
-        },
-
-        {
-          "id": "sandwich-chicken",
-          "name": "Chicken Sandwich",
-          "description": "Sandwich bread, cheese, chicken, tomato, onion, special sauce",
-          "price": "7 AZN",
-          "modelPath": "/models/chicken_sandwich.obj",
-          "mtlPath": "/models/textures/toasts_sandwiches/chicken_sandwich/chicken_sandwich.mtl",
-          "category": "toasts"
-        },
-
-        {
-          "id": "sandwich-meat",
-          "name": "Meat Sandwich",
-          "description": "Sandwich bread, cheese, meat, tomato, onion, special sauce",
-          "price": "8 AZN",
-          "modelPath": "/models/chicken_sandwich.obj",
-          "mtlPath": "/models/textures/toasts_sandwiches/meat_sandwich/chicken_sandwich.mtl",
-          "category": "toasts"
-        },
-
-        {
-          "id": "club-sandwich",
-          "name": "Club Sandwich",
-          "description": "Toast bread, cheese, chicken, sausage,tomato, special sauce",
-          "price": "11 AZN",
-          "modelPath": "/models/club_sandwich.obj",
-          "mtlPath": "/models/textures/toasts_sandwiches/club_sandwich/club_sandwich.mtl",
-          "category": "toasts"
-        }
-      ]
-    },
-
-    {
-      "id": "Burgers",
-      "name": "Burgers",
+      "id": "burgers",
+      "name": {
+        "en": "Burgers",
+        "ru": "Бургеры",
+        "az": "Burgerlər"
+      },
       "items": [
         {
           "id": "burger-chicken",
-          "name": "Chicken Burger",
-          "description": "Burger bread, chicken, mayonnaise, lettuce, tomato, cheddar cheese, special sauce",
+          "name": {
+            "en": "Chicken Burger",
+            "ru": "Куриный бургер",
+            "az": "Toyuq burger"
+          },
+          "description": {
+            "en": "Burger bread, chicken, mayonnaise, lettuce, tomato, cheddar cheese, special sauce",
+            "ru": "Булочка для бургера, курица, майонез, салат, помидор, чеддер, специальный соус",
+            "az": "Burger çörəyi, toyuq, mayonez, salat, pomidor, çeddar, xüsusi sous"
+          },
           "price": "8 AZN",
           "modelPath": "/models/chicken_burger.obj",
-          "mtlPath": "/models/textures/burgers/chicken_burger/chicken_burger.mtl", 
+          "mtlPath": "/models/textures/burgers/chicken_burger/chicken_burger.mtl",
           "category": "burgers"
         },
-
         {
           "id": "burger-meat",
-          "name": "Meat Burger",
-            "description": "Burger bread, meat, mayonnaise, lettuce, tomato, cheddar cheese, special sauce",
-          "price": "11 AZN",
+          "name": {
+            "en": "Meat Burger",
+            "ru": "Мясной бургер",
+            "az": "Ətli burger"
+          },
+          "description": {
+            "en": "Burger bread, beef patty, mayonnaise, lettuce, tomato, cheddar cheese, special sauce",
+            "ru": "Булочка для бургера, говяжья котлета, майонез, салат, помидор, чеддер, специальный соус",
+            "az": "Burger çörəyi, mal əti kotleti, mayonez, salat, pomidor, çeddar, xüsusi sous"
+          },
+          "price": "10 AZN",
           "modelPath": "/models/meat_burger.obj",
           "mtlPath": "/models/textures/burgers/meat_burger/meat_burger.mtl",
           "category": "burgers"
         },
-
         {
-          "id": "special-burger",
-          "name": "Sam's Special Burger",
-            "description": "Sam's Special Burger",
-          "price": "10 AZN",
+          "id": "sams-special-burger",
+          "name": {
+            "en": "Sam's Special Burger",
+            "ru": "Специальный бургер Сэма",
+            "az": "Səmin xüsusi burgeri"
+          },
+          "description": {
+            "en": "Double patty, special sauce, cheese, bacon, lettuce, tomato, onion",
+            "ru": "Двойная котлета, специальный соус, сыр, бекон, салат, помидор, лук",
+            "az": "İkiqat kotlet, xüsusi sous, pendir, bekon, salat, pomidor, soğan"
+          },
+          "price": "15 AZN",
           "modelPath": "/models/sams_special_burger.obj",
           "mtlPath": "/models/textures/burgers/sams_special_burger/sams_special_burger.mtl",
           "category": "burgers"
         },
-
         {
           "id": "burger-set-chicken",
-          "name": "Burger Set with Chicken",
-          "description": "Burger bread, chicken, mayonnaise, lettuce, tomato, cheddar cheese, special sauce, fries, drink",
-          "price": "14 AZN",
+          "name": {
+            "en": "Chicken Burger Set",
+            "ru": "Сет с куриным бургером",
+            "az": "Toyuq burger dəsti"
+          },
+          "description": {
+            "en": "Chicken burger with fries and drink",
+            "ru": "Куриный бургер с картофелем фри и напитком",
+            "az": "Toyuq burger, kartof fri və içki"
+          },
+          "price": "12 AZN",
           "modelPath": "/models/burger_set_chicken.obj",
           "mtlPath": "/models/textures/burgers/burger_set_chicken/burger_set_chicken.mtl",
           "category": "burgers"
         },
-
         {
           "id": "burger-set-meat",
-          "name": "Burger Set with Meat",
-          "description": "Burger bread, meat, mayonnaise, lettuce, tomato, cheddar cheese, special sauce, fries, drink",
-          "price": "16 AZN",
+          "name": {
+            "en": "Meat Burger Set",
+            "ru": "Сет с мясным бургером",
+            "az": "Ətli burger dəsti"
+          },
+          "description": {
+            "en": "Meat burger with fries and drink",
+            "ru": "Мясной бургер с картофелем фри и напитком",
+            "az": "Ətli burger, kartof fri və içki"
+          },
+          "price": "14 AZN",
           "modelPath": "/models/burger_set_meat.obj",
           "mtlPath": "/models/textures/burgers/burger_set_meat/burger_set_meat.mtl",
           "category": "burgers"
         }
       ]
     },
-
     {
-      "id": "Rolls",
-      "name": "Rolls",
+      "id": "toasts",
+      "name": {
+        "en": "Toasts & Sandwiches",
+        "ru": "Тосты и сэндвичи",
+        "az": "Tostlar və sendviçlər"
+      },
       "items": [
         {
-          "id": "roll-chicken",
-          "name": "Chicken Roll",
-          "description": "Roll, chicken, mayonnaise, lettuce, tomato, cheddar cheese, special sauce",
-          "price": "8 AZN",
-          "modelPath": "/models/roll_chicken.obj",
-          "mtlPath": "/models/textures/rolls/roll_chicken/roll_chicken.mtl",
-          "category": "rolls"
+          "id": "toast-cheese",
+          "name": {
+            "en": "Cheese Toast",
+            "ru": "Сырный тост",
+            "az": "Pendir tostu"
+          },
+          "description": {
+            "en": "Toast bread, cheese, tomato sauce",
+            "ru": "Тостовый хлеб, сыр, томатный соус",
+            "az": "Toast çörəyi, pendir, pomidor sousu"
+          },
+          "price": "6 AZN",
+          "modelPath": "/models/cheese_toast.obj",
+          "mtlPath": "/models/textures/toasts_sandwiches/cheese_toast/cheese_toast.mtl",
+          "category": "toasts"
         },
-
+        {
+          "id": "toast-chicken",
+          "name": {
+            "en": "Chicken Toast",
+            "ru": "Куриный тост",
+            "az": "Toyuq tostu"
+          },
+          "description": {
+            "en": "Toast bread, grilled chicken, cheese, vegetables",
+            "ru": "Тостовый хлеб, жареная курица, сыр, овощи",
+            "az": "Toast çörəyi, qızardılmış toyuq, pendir, tərəvəzlər"
+          },
+          "price": "8 AZN",
+          "modelPath": "/models/chicken_toast.obj",
+          "mtlPath": "/models/textures/toasts_sandwiches/chicken_toast/chicken_toast.mtl",
+          "category": "toasts"
+        },
+        {
+          "id": "toast-sausage",
+          "name": {
+            "en": "Sausage Toast",
+            "ru": "Тост с колбасой",
+            "az": "Kolbasa tostu"
+          },
+          "description": {
+            "en": "Toast bread, sausage, cheese, tomato sauce",
+            "ru": "Тостовый хлеб, колбаса, сыр, томатный соус",
+            "az": "Toast çörəyi, kolbasa, pendir, pomidor sousu"
+          },
+          "price": "7 AZN",
+          "modelPath": "/models/sausage_toast.obj",
+          "mtlPath": "/models/textures/toasts_sandwiches/sausage_toast/sausage_toast.mtl",
+          "category": "toasts"
+        },
+        {
+          "id": "toast-mix",
+          "name": {
+            "en": "Mix Toast",
+            "ru": "Микс тост",
+            "az": "Qarışıq tost"
+          },
+          "description": {
+            "en": "Toast bread with mixed ingredients, cheese, vegetables",
+            "ru": "Тостовый хлеб со смешанными ингредиентами, сыр, овощи",
+            "az": "Qarışıq inqrediyentli toast çörəyi, pendir, tərəvəzlər"
+          },
+          "price": "9 AZN",
+          "modelPath": "/models/mix_toast.obj",
+          "mtlPath": "/models/textures/toasts_sandwiches/mix_toast/mix_toast.mtl",
+          "category": "toasts"
+        },
+        {
+          "id": "club-sandwich",
+          "name": {
+            "en": "Club Sandwich",
+            "ru": "Клаб сэндвич",
+            "az": "Klub sendviç"
+          },
+          "description": {
+            "en": "Triple layer sandwich with chicken, bacon, lettuce, tomato",
+            "ru": "Трёхслойный сэндвич с курицей, беконом, салатом, помидором",
+            "az": "Toyuq, bekon, salat, pomidorlu üçqatlı sendviç"
+          },
+          "price": "12 AZN",
+          "modelPath": "/models/club_sandwich.obj",
+          "mtlPath": "/models/textures/toasts_sandwiches/club_sandwich/club_sandwich.mtl",
+          "category": "toasts"
+        },
+        {
+          "id": "chicken-sandwich",
+          "name": {
+            "en": "Chicken Sandwich",
+            "ru": "Куриный сэндвич",
+            "az": "Toyuq sendviç"
+          },
+          "description": {
+            "en": "Grilled chicken sandwich with fresh vegetables",
+            "ru": "Сэндвич с жареной курицей и свежими овощами",
+            "az": "Təzə tərəvəzli qızardılmış toyuq sendviç"
+          },
+          "price": "10 AZN",
+          "modelPath": "/models/chicken_sandwich.obj",
+          "mtlPath": "/models/textures/toasts_sandwiches/chicken_sandwich/chicken_sandwich.mtl",
+          "category": "toasts"
+        }
+      ]
+    },
+    {
+      "id": "rolls",
+      "name": {
+        "en": "Rolls",
+        "ru": "Роллы",
+        "az": "Rulonlar"
+      },
+      "items": [
         {
           "id": "roll-caesar",
-          "name": "Caesar Roll",
-          "description": "Roll, chicken, lettuce, tomato, cheddar cheese, caesar sauce",
+          "name": {
+            "en": "Caesar Roll",
+            "ru": "Ролл Цезарь",
+            "az": "Sezar rulon"
+          },
+          "description": {
+            "en": "Tortilla with chicken, lettuce, caesar sauce, parmesan",
+            "ru": "Тортилья с курицей, салатом, соусом цезарь, пармезаном",
+            "az": "Toyuq, salat, sezar sousu, parmezanlı tortilla"
+          },
           "price": "9 AZN",
           "modelPath": "/models/roll_caesar.obj",
           "mtlPath": "/models/textures/rolls/roll_caesar/roll_caesar.mtl",
           "category": "rolls"
         },
-
+        {
+          "id": "roll-chicken",
+          "name": {
+            "en": "Chicken Roll",
+            "ru": "Куриный ролл",
+            "az": "Toyuq rulon"
+          },
+          "description": {
+            "en": "Tortilla with grilled chicken, vegetables, special sauce",
+            "ru": "Тортилья с жареной курицей, овощами, специальным соусом",
+            "az": "Qızardılmış toyuq, tərəvəz, xüsusi souslu tortilla"
+          },
+          "price": "8 AZN",
+          "modelPath": "/models/roll_chicken.obj",
+          "mtlPath": "/models/textures/rolls/roll_chicken/roll_chicken.mtl",
+          "category": "rolls"
+        },
         {
           "id": "roll-tikka",
-          "name": "Tikka Roll",
-          "description": "Roll, chicken, mayonnaise, lettuce, tomato, cheddar cheese, tikka sauce",
-          "price": "11 AZN",
+          "name": {
+            "en": "Tikka Roll",
+            "ru": "Ролл Тикка",
+            "az": "Tikka rulon"
+          },
+          "description": {
+            "en": "Tortilla with spicy chicken tikka, vegetables, yogurt sauce",
+            "ru": "Тортилья с острой курицей тикка, овощами, йогуртовым соусом",
+            "az": "Ədviyyatlı toyuq tikka, tərəvəz, yoqurt souslu tortilla"
+          },
+          "price": "10 AZN",
           "modelPath": "/models/roll_tikka.obj",
           "mtlPath": "/models/textures/rolls/roll_tikka/roll_tikka.mtl",
           "category": "rolls"
@@ -891,288 +554,509 @@
       ]
     },
     {
-      "id": "Soups",
-      "name": "Soups",
+      "id": "soups",
+      "name": {
+        "en": "Soups",
+        "ru": "Супы",
+        "az": "Şorbalar"
+      },
       "items": [
         {
-          "id": "lentil-soup",
-          "name": "Lentil Soup",
-          "description": "Lentil, carrots, onions, potatoes, spices",
-          "price": "5 AZN",
-          "modelPath": "/models/lentil_soup.obj",
-          "mtlPath": "/models/textures/soups/lentil_soup/lentil_soup.mtl",
-          "category": "soups"
-        },
-
-        {
           "id": "tomato-soup",
-          "name": "Tomato Soup",
-          "description": "Tomato, carrots, onions, croutons, potatoes, spices",
-          "price": "5 AZN",
+          "name": {
+            "en": "Tomato Soup",
+            "ru": "Томатный суп",
+            "az": "Pomidor şorbası"
+          },
+          "description": {
+            "en": "Creamy tomato soup with herbs and spices",
+            "ru": "Кремовый томатный суп с травами и специями",
+            "az": "Otlar və ədviyyatlarla kremalı pomidor şorbası"
+          },
+          "price": "7 AZN",
           "modelPath": "/models/tomato_soup.obj",
           "mtlPath": "/models/textures/soups/tomato_soup/tomato_soup.mtl",
           "category": "soups"
         },
-
         {
           "id": "mushroom-soup",
-          "name": "Mushroom Soup",
-          "description": "Mushroom, cream, onions, potatoes, cheese, spices",
-          "price": "7 AZN",
+          "name": {
+            "en": "Mushroom Soup",
+            "ru": "Грибной суп",
+            "az": "Göbələk şorbası"
+          },
+          "description": {
+            "en": "Creamy mushroom soup with fresh herbs",
+            "ru": "Кремовый грибной суп со свежими травами",
+            "az": "Təzə otlarla kremalı göbələk şorbası"
+          },
+          "price": "8 AZN",
           "modelPath": "/models/mushroom_soup.obj",
           "mtlPath": "/models/textures/soups/mushroom_soup/mushroom_soup.mtl",
           "category": "soups"
+        },
+        {
+          "id": "lentil-soup",
+          "name": {
+            "en": "Lentil Soup",
+            "ru": "Чечевичный суп",
+            "az": "Mərcimək şorbası"
+          },
+          "description": {
+            "en": "Healthy lentil soup with vegetables and spices",
+            "ru": "Полезный чечевичный суп с овощами и специями",
+            "az": "Tərəvəz və ədviyyatlarla sağlam mərcimək şorbası"
+          },
+          "price": "6 AZN",
+          "modelPath": "/models/lentil_soup.obj",
+          "mtlPath": "/models/textures/soups/lentil_soup/lentil_soup.mtl",
+          "category": "soups"
         }
-
       ]
     },
     {
-      "id": "Snacks",
-      "name": "Snacks",
+      "id": "snacks",
+      "name": {
+        "en": "Snacks",
+        "ru": "Закуски",
+        "az": "Qəlyanaltılar"
+      },
       "items": [
         {
           "id": "fries",
-          "name": "Fries",
-          "description": "Fries",
-          "price": "5,5 AZN",
+          "name": {
+            "en": "Fries",
+            "ru": "Картофель фри",
+            "az": "Kartof fri"
+          },
+          "description": {
+            "en": "Crispy golden fries",
+            "ru": "Хрустящий золотистый картофель фри",
+            "az": "Xırtıldayan qızılı kartof fri"
+          },
+          "price": "5.5 AZN",
           "modelPath": "/models/fries.obj",
           "mtlPath": "/models/textures/snacks/fries/fries.mtl",
           "category": "snacks"
         },
-
         {
-          "id": "chips",
-          "name": "Chips",
-          "description": "Potato chips",
-          "price": "5 AZN",
-          "modelPath": "/models/chips.obj",
-          "mtlPath": "/models/textures/snacks/chips/chips.mtl",
+          "id": "nuggets",
+          "name": {
+            "en": "Chicken Nuggets",
+            "ru": "Куриные наггетсы",
+            "az": "Toyuq nuggetləri"
+          },
+          "description": {
+            "en": "Crispy chicken nuggets with dipping sauce",
+            "ru": "Хрустящие куриные наггетсы с соусом",
+            "az": "Sousla xırtıldayan toyuq nuggetləri"
+          },
+          "price": "8 AZN",
+          "modelPath": "/models/nuggets.obj",
+          "mtlPath": "/models/textures/snacks/nuggets/nuggets.mtl",
           "category": "snacks"
         },
-        
         {
-          "id": "nachos",
-          "name": "Nachos",
-          "description": "Nachos, cheese sauce",
-          "price": "7,5 AZN",
-          "modelPath": "/models/nachos.obj",
-          "mtlPath": "/models/textures/snacks/nachos/nachos.mtl",
+          "id": "nuggets-fries",
+          "name": {
+            "en": "Nuggets with Fries",
+            "ru": "Наггетсы с картофелем фри",
+            "az": "Kartof fri ilə nuggetlər"
+          },
+          "description": {
+            "en": "Chicken nuggets served with crispy fries",
+            "ru": "Куриные наггетсы с хрустящим картофелем фри",
+            "az": "Xırtıldayan kartof fri ilə toyuq nuggetləri"
+          },
+          "price": "12 AZN",
+          "modelPath": "/models/nuggets_fries.obj",
+          "mtlPath": "/models/textures/snacks/nuggets_fries/nuggets_fries.mtl",
           "category": "snacks"
         },
-
-        {
-          "id": "nachos-cheese",
-          "name": "Nachos with Cheese",
-          "description": "Nachos, cheese sauce",
-          "price": "7,5 AZN",
-          "modelPath": "/models/nachos_cheese.obj",
-          "mtlPath": "/models/textures/snacks/nachos_cheese/nachos_cheese.mtl",
-          "category": "snacks"
-        },
-
         {
           "id": "chicken-popcorn",
-          "name": "Chicken Popcorn",
-          "description": "Chicken, flour, spices",
-          "price": "5 AZN",
+          "name": {
+            "en": "Chicken Popcorn",
+            "ru": "Куриные попкорны",
+            "az": "Toyuq popkornları"
+          },
+          "description": {
+            "en": "Bite-sized crispy chicken pieces",
+            "ru": "Маленькие хрустящие кусочки курицы",
+            "az": "Kiçik xırtıldayan toyuq parçaları"
+          },
+          "price": "9 AZN",
           "modelPath": "/models/chicken_popcorn.obj",
           "mtlPath": "/models/textures/snacks/chicken_popcorn/chicken_popcorn.mtl",
           "category": "snacks"
         },
-
         {
-          "id": "sunflower-seeds",
-          "name": "Sunflower Seeds",
-          "description": "White Sunflower seeds",
-          "price": "4 AZN",
-          "modelPath": "/models/sunflower_seeds.obj",
-          "mtlPath": "/models/textures/snacks/sunflower_seeds/sunflower_seeds.mtl",
+          "id": "shrimp-popcorn",
+          "name": {
+            "en": "Shrimp Popcorn",
+            "ru": "Креветочные попкорны",
+            "az": "Karides popkornları"
+          },
+          "description": {
+            "en": "Bite-sized crispy shrimp pieces",
+            "ru": "Маленькие хрустящие кусочки креветок",
+            "az": "Kiçik xırtıldayan karides parçaları"
+          },
+          "price": "12 AZN",
+          "modelPath": "/models/shrimp_popcorn.obj",
+          "mtlPath": "/models/textures/snacks/shrimp_popcorn/shrimp_popcorn.mtl",
           "category": "snacks"
         },
-
         {
-          "id": "crackers",  
-          "name": "Crackers",
-          "description": "Crackers",
+          "id": "mozzarella-sticks",
+          "name": {
+            "en": "Mozzarella Sticks",
+            "ru": "Моцарелла стики",
+            "az": "Mozzarella çubuqları"
+          },
+          "description": {
+            "en": "Crispy breaded mozzarella sticks with marinara sauce",
+            "ru": "Хрустящие моцарелла стики в панировке с маринара соусом",
+            "az": "Marinara souslu xırtıldayan çörək qırıntılı mozzarella çubuqları"
+          },
+          "price": "10 AZN",
+          "modelPath": "/models/mozarella_sticks.obj",
+          "mtlPath": "/models/textures/snacks/mozarella_sticks/mozarella_sticks.mtl",
+          "category": "snacks"
+        },
+        {
+          "id": "nachos",
+          "name": {
+            "en": "Nachos",
+            "ru": "Начос",
+            "az": "Naços"
+          },
+          "description": {
+            "en": "Crispy tortilla chips with salsa",
+            "ru": "Хрустящие чипсы из тортильи с сальсой",
+            "az": "Salsa ilə xırtıldayan tortilla çipsləri"
+          },
+          "price": "7 AZN",
+          "modelPath": "/models/nachos.obj",
+          "mtlPath": "/models/textures/snacks/nachos/nachos.mtl",
+          "category": "snacks"
+        },
+        {
+          "id": "nachos-cheese",
+          "name": {
+            "en": "Nachos with Cheese",
+            "ru": "Начос с сыром",
+            "az": "Pendirli naços"
+          },
+          "description": {
+            "en": "Crispy tortilla chips with melted cheese sauce",
+            "ru": "Хрустящие чипсы из тортильи с расплавленным сырным соусом",
+            "az": "Əridilmiş pendir sousu ilə xırtıldayan tortilla çipsləri"
+          },
+          "price": "9 AZN",
+          "modelPath": "/models/nachos_cheese.obj",
+          "mtlPath": "/models/textures/snacks/nachos_cheese/nachos_cheese.mtl",
+          "category": "snacks"
+        },
+        {
+          "id": "fried-dumplings",
+          "name": {
+            "en": "Fried Dumplings",
+            "ru": "Жареные пельмени",
+            "az": "Qızardılmış düşbərə"
+          },
+          "description": {
+            "en": "Crispy fried dumplings with dipping sauce",
+            "ru": "Хрустящие жареные пельмени с соусом",
+            "az": "Sousla xırtıldayan qızardılmış düşbərə"
+          },
+          "price": "8 AZN",
+          "modelPath": "/models/fried_dumplings.obj",
+          "mtlPath": "/models/textures/snacks/fried_dumplings/fried_dumplings.mtl",
+          "category": "snacks"
+        },
+        {
+          "id": "fried-mushrooms",
+          "name": {
+            "en": "Fried Mushrooms",
+            "ru": "Жареные грибы",
+            "az": "Qızardılmış göbələklər"
+          },
+          "description": {
+            "en": "Crispy fried mushrooms with garlic sauce",
+            "ru": "Хрустящие жареные грибы с чесночным соусом",
+            "az": "Sarımsaq sousu ilə xırtıldayan qızardılmış göbələklər"
+          },
+          "price": "7 AZN",
+          "modelPath": "/models/fried_mushrooms.obj",
+          "mtlPath": "/models/textures/snacks/fried_mushrooms/fried_mushrooms.mtl",
+          "category": "snacks"
+        },
+        {
+          "id": "corn-dog",
+          "name": {
+            "en": "Corn Dog",
+            "ru": "Корн дог",
+            "az": "Qarğıdalı sosisi"
+          },
+          "description": {
+            "en": "Hot dog on a stick covered in cornmeal batter",
+            "ru": "Сосиска на палочке в кукурузном тесте",
+            "az": "Qarğıdalı xəmirində çubuqlu sosiska"
+          },
+          "price": "6 AZN",
+          "modelPath": "/models/corn_dog.obj",
+          "mtlPath": "/models/textures/snacks/corn_dog/corn_dog.mtl",
+          "category": "snacks"
+        },
+        {
+          "id": "chips",
+          "name": {
+            "en": "Chips",
+            "ru": "Чипсы",
+            "az": "Çipslər"
+          },
+          "description": {
+            "en": "Crispy potato chips",
+            "ru": "Хрустящие картофельные чипсы",
+            "az": "Xırtıldayan kartof çipsləri"
+          },
           "price": "4 AZN",
+          "modelPath": "/models/chips.obj",
+          "mtlPath": "/models/textures/snacks/chips/chips.mtl",
+          "category": "snacks"
+        },
+        {
+          "id": "crackers",
+          "name": {
+            "en": "Crackers",
+            "ru": "Крекеры",
+            "az": "Krekerlər"
+          },
+          "description": {
+            "en": "Crispy salted crackers",
+            "ru": "Хрустящие солёные крекеры",
+            "az": "Xırtıldayan duzlu krekerlər"
+          },
+          "price": "3 AZN",
           "modelPath": "/models/crackers.obj",
           "mtlPath": "/models/textures/snacks/crackers/crackers.mtl",
           "category": "snacks"
         },
-
         {
-          "id": "croutons",  
-          "name": "Croutons",
-          "description": "Croutons",
-          "price": "4 AZN",
+          "id": "croutons",
+          "name": {
+            "en": "Croutons",
+            "ru": "Сухарики",
+            "az": "Çörək qırıntıları"
+          },
+          "description": {
+            "en": "Seasoned bread croutons",
+            "ru": "Приправленные хлебные сухарики",
+            "az": "Ədviyyatlı çörək qırıntıları"
+          },
+          "price": "3.5 AZN",
           "modelPath": "/models/croutons.obj",
           "mtlPath": "/models/textures/snacks/croutons/croutons.mtl",
           "category": "snacks"
         },
-
         {
-          "id": "string_cheese",  
-          "name": "String Cheese",
-          "description": "String Cheese",
+          "id": "string-cheese",
+          "name": {
+            "en": "String Cheese",
+            "ru": "Сырные палочки",
+            "az": "Pendir çubuqları"
+          },
+          "description": {
+            "en": "Mozzarella string cheese",
+            "ru": "Моцарелла в виде палочек",
+            "az": "Çubuq şəklində mozzarella"
+          },
           "price": "5 AZN",
           "modelPath": "/models/string_cheese.obj",
           "mtlPath": "/models/textures/snacks/string_cheese/string_cheese.mtl",
           "category": "snacks"
         },
-
         {
-          "id": "peas",  
-          "name": "Peas",
-          "description": "Peas",
+          "id": "peanuts",
+          "name": {
+            "en": "Peanuts",
+            "ru": "Арахис",
+            "az": "Yer fıstığı"
+          },
+          "description": {
+            "en": "Roasted salted peanuts",
+            "ru": "Жареный солёный арахис",
+            "az": "Qızardılmış duzlu yer fıstığı"
+          },
+          "price": "4 AZN",
+          "modelPath": "/models/peanuts.obj",
+          "mtlPath": "/models/textures/snacks/peanuts/peanuts.mtl",
+          "category": "snacks"
+        },
+        {
+          "id": "pistachios",
+          "name": {
+            "en": "Pistachios",
+            "ru": "Фисташки",
+            "az": "Püstə"
+          },
+          "description": {
+            "en": "Roasted salted pistachios",
+            "ru": "Жареные солёные фисташки",
+            "az": "Qızardılmış duzlu püstə"
+          },
+          "price": "6 AZN",
+          "modelPath": "/models/pistachios.obj",
+          "mtlPath": "/models/textures/snacks/pistachios/pistachios.mtl",
+          "category": "snacks"
+        },
+        {
+          "id": "sunflower-seeds",
+          "name": {
+            "en": "Sunflower Seeds",
+            "ru": "Семечки",
+            "az": "Günəbaxan toxumu"
+          },
+          "description": {
+            "en": "Roasted salted sunflower seeds",
+            "ru": "Жареные солёные семечки",
+            "az": "Qızardılmış duzlu günəbaxan toxumu"
+          },
+          "price": "3 AZN",
+          "modelPath": "/models/sunflower_seeds.obj",
+          "mtlPath": "/models/textures/snacks/sunflower_seeds/sunflower_seeds.mtl",
+          "category": "snacks"
+        },
+        {
+          "id": "olives",
+          "name": {
+            "en": "Olives",
+            "ru": "Оливки",
+            "az": "Zeytun"
+          },
+          "description": {
+            "en": "Marinated green and black olives",
+            "ru": "Маринованные зелёные и чёрные оливки",
+            "az": "Marinadlanmış yaşıl və qara zeytun"
+          },
+          "price": "5 AZN",
+          "modelPath": "/models/olives.obj",
+          "mtlPath": "/models/textures/snacks/olives/olives.mtl",
+          "category": "snacks"
+        },
+        {
+          "id": "peas",
+          "name": {
+            "en": "Peas",
+            "ru": "Горошек",
+            "az": "Noxud"
+          },
+          "description": {
+            "en": "Roasted green peas",
+            "ru": "Жареный зелёный горошек",
+            "az": "Qızardılmış yaşıl noxud"
+          },
           "price": "4 AZN",
           "modelPath": "/models/peas.obj",
           "mtlPath": "/models/textures/snacks/peas/peas.mtl",
           "category": "snacks"
         },
-
         {
-          "id": "fried-peas",  
-          "name": "Fried Peas",
-          "description": "FriedPeas",
-          "price": "5 AZN",
+          "id": "fried-peas",
+          "name": {
+            "en": "Fried Peas",
+            "ru": "Жареный горошек",
+            "az": "Qızardılmış noxud"
+          },
+          "description": {
+            "en": "Crispy fried peas with spices",
+            "ru": "Хрустящий жареный горошек со специями",
+            "az": "Ədviyyatlarla xırtıldayan qızardılmış noxud"
+          },
+          "price": "4.5 AZN",
           "modelPath": "/models/fried_peas.obj",
           "mtlPath": "/models/textures/snacks/fried_peas/fried_peas.mtl",
-          "category": "snacks"
-        },
-
-        {
-          "id": "mozarella-sticks",  
-          "name": "Mozarella Sticks",
-          "description": "Mozarella Sticks",
-          "price": "5 AZN",
-          "modelPath": "/models/mozarella_sticks.obj",
-          "mtlPath": "/models/textures/snacks/mozarella_sticks/mozarella_sticks.mtl",
-          "category": "snacks"
-        },
-
-        {
-          "id": "fried_dumplings",  
-          "name": "Fried Dumplings",
-          "description": "Fried Dumplings",
-          "price": "5 AZN",
-          "modelPath": "/models/fried_dumplings.obj",
-          "mtlPath": "/models/textures/snacks/fried_dumplings/fried_dumplings.mtl",
-          "category": "snacks"
-        },
-
-        {
-          "id": "peanuts",  
-          "name": "Peanuts",
-          "description": "Peanuts",
-          "price": "3 AZN",
-          "modelPath": "/models/peanuts.obj",
-          "mtlPath": "/models/textures/snacks/peanuts/peanuts.mtl",
-          "category": "snacks"
-        },
-
-        {
-          "id": "fried-mushrooms",  
-          "name": "Fried Mushrooms",
-          "description": "Fried Mushrooms",
-          "price": "5 AZN",
-          "modelPath": "/models/fried_mushrooms.obj",
-          "mtlPath": "/models/textures/snacks/fried_mushrooms/fried_mushrooms.mtl",
-          "category": "snacks"
-        },
-
-        {
-          "id": "corn-dog",  
-          "name": "Corn Dog",
-          "description": "Dough, Sausage",
-          "price": "5 AZN",
-          "modelPath": "/models/corn_dog.obj",
-          "mtlPath": "/models/textures/snacks/corn_dog/corn_dog.mtl",
-          "category": "snacks"
-        },
-
-        {
-          "id": "nuggets-fries",  
-          "name": "Nuggets with Fries",
-          "description": "ChickenNuggets, Fries",
-          "price": "5 AZN",
-          "modelPath": "/models/nuggets_fries.obj",
-          "mtlPath": "/models/textures/snacks/nuggets_fries/nuggets_fries.mtl",
-          "category": "snacks"
-        },
-
-        {
-          "id": "nuggets",  
-          "name": "Nuggets",
-          "description": "Chicken Nuggets",
-          "price": "5 AZN",
-          "modelPath": "/models/nuggets.obj",
-          "mtlPath": "/models/textures/snacks/nuggets/nuggets.mtl",
-          "category": "snacks"
-        },
-
-        {
-          "id": "chicken-throat",  
-          "name": "Chicken Throat",
-          "description": "Chicken Throat",
-          "price": "5 AZN",
-          "modelPath": "/models/chicken_throat.obj",
-          "mtlPath": "/models/textures/snacks/chicken_throat/chicken_throat.mtl",
-          "category": "snacks"
-        },
-
-        {
-          "id": "chicken-stomach",  
-          "name": "Chicken Stomach",
-          "description": "Chicken Stomach",
-          "price": "5 AZN",
-          "modelPath": "/models/chicken_stomach.obj",
-          "mtlPath": "/models/textures/snacks/chicken_stomach/chicken_stomach.mtl",
-          "category": "snacks"
-        },
-
-        {
-          "id": "olives",  
-          "name": "Olives",
-          "description": "Olives",
-          "price": "4 AZN",
-          "modelPath": "/models/olives.obj",
-          "mtlPath": "/models/textures/snacks/olives/olives.mtl",
           "category": "snacks"
         }
       ]
     },
     {
-      "id": "Other",
-      "name": "Other",
+      "id": "other",
+      "name": {
+        "en": "Other",
+        "ru": "Другое",
+        "az": "Digər"
+      },
       "items": [
         {
           "id": "chicken-langet",
-          "name": "Chicken Langet",
-          "description": "Chicken Langet",
-          "price": "8 AZN",
+          "name": {
+            "en": "Chicken Langet",
+            "ru": "Куриный лангет",
+            "az": "Toyuq langet"
+          },
+          "description": {
+            "en": "Tender chicken fillet with special seasoning",
+            "ru": "Нежное куриное филе со специальными приправами",
+            "az": "Xüsusi ədviyyatlarla zərif toyuq filesi"
+          },
+          "price": "13 AZN",
           "modelPath": "/models/chicken_langet.obj",
           "mtlPath": "/models/textures/other/chicken_langet/chicken_langet.mtl",
           "category": "other"
         },
-
         {
-          "id": "chicken_rice",
-          "name": "Chicken with Rice",
-          "description": "Chicken, rice, vegetables, spices",
+          "id": "chicken-throat",
+          "name": {
+            "en": "Chicken Throat",
+            "ru": "Куриные шейки",
+            "az": "Toyuq boynu"
+          },
+          "description": {
+            "en": "Grilled chicken throat with spices",
+            "ru": "Жареные куриные шейки со специями",
+            "az": "Ədviyyatlarla qızardılmış toyuq boynu"
+          },
           "price": "8 AZN",
+          "modelPath": "/models/chicken_throat.obj",
+          "mtlPath": "/models/textures/other/chicken_throat/chicken_throat.mtl",
+          "category": "other"
+        },
+        {
+          "id": "chicken-stomach",
+          "name": {
+            "en": "Chicken Stomach",
+            "ru": "Куриные желудки",
+            "az": "Toyuq mədəsi"
+          },
+          "description": {
+            "en": "Grilled chicken stomach with herbs",
+            "ru": "Жареные куриные желудки с травами",
+            "az": "Otlarla qızardılmış toyuq mədəsi"
+          },
+          "price": "9 AZN",
+          "modelPath": "/models/chicken_stomach.obj",
+          "mtlPath": "/models/textures/other/chicken_stomach/chicken_stomach.mtl",
+          "category": "other"
+        },
+        {
+          "id": "chicken-rice",
+          "name": {
+            "en": "Chicken with Rice",
+            "ru": "Курица с рисом",
+            "az": "Düyülü toyuq"
+          },
+          "description": {
+            "en": "Grilled chicken served with seasoned rice",
+            "ru": "Жареная курица с приправленным рисом",
+            "az": "Ədviyyatlı düyü ilə qızardılmış toyuq"
+          },
+          "price": "14 AZN",
           "modelPath": "/models/chicken_rice.obj",
           "mtlPath": "/models/textures/other/chicken_rice/chicken_rice.mtl",
           "category": "other"
         }
-      ]
-    },
-
-    {
-      "id": "drinks",
-      "name": "Drinks",
-      "items": [
-        
-       
       ]
     }
   ]

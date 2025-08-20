@@ -3,10 +3,9 @@
 import { Suspense, useRef, useState, useEffect } from 'react'
 import { Canvas, useFrame, useLoader } from '@react-three/fiber'
 import { OrbitControls, Environment, ContactShadows, Html } from '@react-three/drei'
-import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js'
-import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader.js'
 import { TextureLoader } from 'three'
 import * as THREE from 'three'
+import modelCache from '../utils/ModelCache'
 
 interface Model3DProps {
   modelPath: string
@@ -28,47 +27,20 @@ function Model3D({ modelPath, texturePath, mtlPath, scale = 1 }: Model3DProps) {
   const [obj, setObj] = useState<THREE.Group | null>(null)
   
   useEffect(() => {
-    if (mtlPath) {
-      // Загружаем MTL файл, затем OBJ
-      const mtlLoader = new MTLLoader()
-      const objLoader = new OBJLoader()
-      
-      // Устанавливаем базовый путь для правильного разрешения текстур
-      const basePath = mtlPath.substring(0, mtlPath.lastIndexOf('/') + 1)
-      const mtlFileName = mtlPath.substring(mtlPath.lastIndexOf('/') + 1)
-      mtlLoader.setPath(basePath)
-      
-      mtlLoader.load(
-        mtlFileName,
-        (materials) => {
-          materials.preload()
-          objLoader.setMaterials(materials)
-          
-          objLoader.load(
-            modelPath,
-            (object) => {
-              setObj(object)
-            },
-            undefined,
-            (error) => {
-              console.error('Error loading OBJ:', error)
-              // Fallback: загружаем без MTL
-              objLoader.load(modelPath, setObj)
-            }
-          )
-        },
-        undefined,
-        (error) => {
-          console.error('Error loading MTL:', error)
-          // Fallback: загружаем только OBJ
-          objLoader.load(modelPath, setObj)
+    // Используем кеш для загрузки модели
+    modelCache.loadModel(modelPath, mtlPath)
+      .then((loadedModel) => {
+        if (loadedModel instanceof THREE.Group) {
+          setObj(loadedModel)
+        } else {
+          console.warn('Loaded model is not a Group:', loadedModel)
+          setObj(null)
         }
-      )
-    } else {
-      // Загружаем только OBJ файл
-      const objLoader = new OBJLoader()
-      objLoader.load(modelPath, setObj)
-    }
+      })
+      .catch((error) => {
+        console.error('Error loading model from cache:', error)
+        setObj(null)
+      })
   }, [modelPath, mtlPath])
   
   // Fallback для старых текстур (если нет MTL)
@@ -131,35 +103,37 @@ export default function Model3DViewer({ modelPath, texturePath, mtlPath, classNa
   return (
     <div className={`w-full h-full ${className}`}>
       <Canvas
-        camera={{ position: [0, 0, 0], fov: 45 }}
+        camera={{ position: [1, 2, 0], fov: 45 }}
         gl={{ antialias: true, alpha: true }}
         dpr={[1, 2]}
       >
         <Suspense fallback={<LoadingSpinner />}>
-          {/* Освещение */}
-          <ambientLight intensity={enableEffects ? 0.4 : 0.8} />
+          {/* Освещение (предельная яркость) */}
+          <ambientLight intensity={enableEffects ? 1.5 : 1.5} color="#ffffff" />
           {enableEffects ? (
             <>
               <spotLight
                 position={[10, 10, 10]}
                 angle={0.15}
                 penumbra={1}
-                intensity={1}
+                intensity={2.0}
                 castShadow
-                color="#00f5ff"
+                color="#ffffff"
               />
               <spotLight
                 position={[-10, -10, -10]}
                 angle={0.15}
                 penumbra={1}
-                intensity={0.5}
-                color="#bf00ff"
+                intensity={1.0}
+                color="#ffffff"
               />
+              <directionalLight position={[0, 10, 0]} intensity={1.0} color="#ffffff" />
             </>
           ) : (
             <>
-              <directionalLight position={[5, 5, 5]} intensity={1} color="#ffffff" />
-              <directionalLight position={[-5, -5, -5]} intensity={0.5} color="#ffffff" />
+              <directionalLight position={[5, 5, 5]} intensity={2.0} color="#ffffff" />
+              <directionalLight position={[-5, -5, -5]} intensity={1.0} color="#ffffff" />
+              <directionalLight position={[0, 10, 0]} intensity={1.0} color="#ffffff" />
             </>
           )}
           
@@ -185,8 +159,8 @@ export default function Model3DViewer({ modelPath, texturePath, mtlPath, classNa
             enablePan={true}
             enableZoom={true}
             enableRotate={true}
-            minDistance={1.5}
-            maxDistance={6}
+            minDistance={0.5}
+            maxDistance={8}
             minPolarAngle={Math.PI / 8}
             maxPolarAngle={Math.PI - Math.PI / 8}
             target={[0, 0, 0]}
