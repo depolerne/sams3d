@@ -35,36 +35,43 @@ export default function Model3DPreview({ modelPath, mtlPath, className = '' }: M
     camera.position.set(0, 5.6, 0.6);
     camera.lookAt(0, -0.2, 0);
 
-    // Создаем рендерер
+    // Создаем рендерер с оптимизациями для мобильных устройств
+    const isMobile = window.innerWidth < 768;
     const renderer = new THREE.WebGLRenderer({ 
-      antialias: true, 
+      antialias: !isMobile, // Отключаем антиалиасинг на мобильных
       alpha: true,
-      preserveDrawingBuffer: true
+      preserveDrawingBuffer: false, // Экономим память
+      powerPreference: 'low-power' // Энергосбережение
     });
     renderer.setSize(mountRef.current.clientWidth, mountRef.current.clientHeight);
     renderer.setClearColor(0x000000, 0); // Прозрачный фон
-    renderer.shadowMap.enabled = true;
-    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    renderer.shadowMap.enabled = !isMobile; // Отключаем тени на мобильных
+    if (!isMobile) {
+      renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    }
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1.5 : 2)); // Ограничиваем разрешение
     rendererRef.current = renderer;
     mountRef.current.appendChild(renderer.domElement);
 
-    // Добавляем освещение (предельная яркость)
-    const ambientLight = new THREE.AmbientLight(0xffffff, 1.5);
+    // Оптимизированное освещение
+    const ambientLight = new THREE.AmbientLight(0xffffff, isMobile ? 2.0 : 1.5);
     scene.add(ambientLight);
 
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 2.0);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, isMobile ? 1.5 : 2.0);
     directionalLight.position.set(5, 5, 5);
-    directionalLight.castShadow = true;
+    directionalLight.castShadow = !isMobile; // Отключаем тени на мобильных
     scene.add(directionalLight);
 
-    const pointLight = new THREE.PointLight(0xffffff, 1.0, 100);
-    pointLight.position.set(-5, 5, 5);
-    scene.add(pointLight);
+    // Добавляем дополнительные источники только на десктопе
+    if (!isMobile) {
+      const pointLight = new THREE.PointLight(0xffffff, 1.0, 100);
+      pointLight.position.set(-5, 5, 5);
+      scene.add(pointLight);
 
-    // Дополнительное освещение для максимальной яркости
-    const additionalLight = new THREE.DirectionalLight(0xffffff, 1.0);
-    additionalLight.position.set(0, 10, 0);
-    scene.add(additionalLight);
+      const additionalLight = new THREE.DirectionalLight(0xffffff, 1.0);
+      additionalLight.position.set(0, 10, 0);
+      scene.add(additionalLight);
+    }
 
     // Функция для загрузки и настройки модели
     const loadAndSetupModel = (object: THREE.Object3D) => {
@@ -96,16 +103,24 @@ export default function Model3DPreview({ modelPath, mtlPath, className = '' }: M
         console.error('Error loading model from cache:', error);
       });
 
-    // Анимация вращения
-    const animate = () => {
-      if (modelRef.current) {
-        modelRef.current.rotation.y += 0.01;
+    // Оптимизированная анимация с адаптивным FPS
+    let lastTime = 0;
+    const targetFPS = isMobile ? 30 : 60; // Снижаем FPS на мобильных
+    const frameInterval = 1000 / targetFPS;
+    
+    const animate = (currentTime: number) => {
+      if (currentTime - lastTime >= frameInterval) {
+        if (modelRef.current) {
+          modelRef.current.rotation.y += isMobile ? 0.008 : 0.01; // Медленнее на мобильных
+        }
+        
+        renderer.render(scene, camera);
+        lastTime = currentTime;
       }
       
-      renderer.render(scene, camera);
       animationIdRef.current = requestAnimationFrame(animate);
     };
-    animate();
+    animate(0);
 
     // Обработка изменения размера
     const handleResize = () => {

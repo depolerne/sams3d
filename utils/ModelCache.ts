@@ -22,6 +22,8 @@ class ModelCacheManager {
   private materialPromises = new Map<string, Promise<any>>();
   private readonly maxCacheSize = 50; // Максимальное количество моделей в кеше
   private readonly maxAge = 30 * 60 * 1000; // 30 минут в миллисекундах
+  private readonly maxConcurrentLoads = 3; // Максимальное количество одновременных загрузок
+  private currentLoads = 0;
 
   // Генерация ключа для кеша
   private getModelKey(modelPath: string, mtlPath?: string): string {
@@ -209,14 +211,29 @@ class ModelCacheManager {
 
   // Предзагрузка моделей
   async preloadModels(models: Array<{ modelPath: string; mtlPath?: string }>) {
-    const promises = models.map(({ modelPath, mtlPath }) => 
-      this.loadModel(modelPath, mtlPath).catch(error => {
-        console.warn(`Failed to preload model ${modelPath}:`, error);
-        return null;
-      })
-    );
+    // Загружаем модели порциями для контроля нагрузки
+    const batchSize = this.maxConcurrentLoads;
+    const results = [];
     
-    await Promise.allSettled(promises);
+    for (let i = 0; i < models.length; i += batchSize) {
+      const batch = models.slice(i, i + batchSize);
+      const batchPromises = batch.map(({ modelPath, mtlPath }) => 
+        this.loadModel(modelPath, mtlPath).catch(error => {
+          console.warn(`Failed to preload model ${modelPath}:`, error);
+          return null;
+        })
+      );
+      
+      const batchResults = await Promise.allSettled(batchPromises);
+      results.push(...batchResults);
+      
+      // Небольшая пауза между батчами для снижения нагрузки
+      if (i + batchSize < models.length) {
+        await new Promise(resolve => setTimeout(resolve, 100));
+      }
+    }
+    
+    return results;
   }
 
   // Получение информации о кеше

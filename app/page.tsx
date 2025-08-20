@@ -7,18 +7,8 @@ import dynamic from 'next/dynamic';
 import { useLanguage } from '../contexts/LanguageContext';
 import LanguageSwitcher from '../components/LanguageSwitcher';
 import modelCache from '../utils/ModelCache';
-
+import LazyModel3DPreview from '../components/LazyModel3DPreview';
 import CacheLoadingIndicator from '../components/CacheLoadingIndicator';
-
-// Динамический импорт 3D компонента для избежания SSR проблем
-const Model3DPreview = dynamic(() => import('../components/Model3DPreview'), {
-  ssr: false,
-  loading: () => (
-    <div className="w-full h-full flex items-center justify-center">
-      <div className="w-8 h-8 border-2 border-cyan-400 border-t-transparent rounded-full animate-spin"></div>
-    </div>
-  )
-});
 
 interface MenuItem {
   id: string;
@@ -56,19 +46,28 @@ export default function Home() {
         setMenuData(data);
         setLoading(false);
         
-        // Предзагружаем модели текущей категории
+        // Предзагружаем только первые 3 модели для быстрого старта
         const currentCategoryItems = data.categories.find(cat => cat.id === 'salads')?.items || [];
-        const modelsToPreload = currentCategoryItems.slice(0, 6).map(item => ({
+        const modelsToPreload = currentCategoryItems.slice(0, 3).map(item => ({
           modelPath: item.modelPath,
           mtlPath: item.mtlPath
         }));
         
-        // Предзагружаем первые несколько моделей
-        try {
-          await modelCache.preloadModels(modelsToPreload);
-        } catch (error) {
-          console.warn('Some models failed to preload:', error);
-        }
+        // Предзагружаем критически важные модели
+        modelCache.preloadModels(modelsToPreload)
+          .catch(error => {
+            console.warn('Some models failed to preload:', error);
+          });
+        
+        // Предзагружаем остальные модели категории в фоне с задержкой
+        setTimeout(() => {
+          const remainingModels = currentCategoryItems.slice(3, 8).map(item => ({
+            modelPath: item.modelPath,
+            mtlPath: item.mtlPath
+          }));
+          modelCache.preloadModels(remainingModels)
+            .catch(error => console.warn('Background preload failed:', error));
+        }, 2000);
         
         setModelsLoading(false);
       })
@@ -339,10 +338,11 @@ export default function Home() {
                 
                 {/* 3D Model Preview */}
                 <div className="absolute inset-0">
-                  <Model3DPreview 
+                  <LazyModel3DPreview 
                     modelPath={item.modelPath}
                     mtlPath={item.mtlPath}
                     className="opacity-80 group-hover:opacity-100 transition-all duration-500"
+                    priority={index < 4} // Приоритет для первых 4 элементов
                   />
                 </div>
                 
