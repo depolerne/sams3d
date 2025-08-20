@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "check-models": "node scripts/check-models.js",
+    "test-cache": "node scripts/test-cache.js"
   },
   "dependencies": {
     "next": "14.0.4",

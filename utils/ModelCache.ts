@@ -138,10 +138,13 @@ class ModelCacheManager {
   // Загрузка модели с кешированием
   async loadModel(modelPath: string, mtlPath?: string): Promise<THREE.Object3D> {
     const cacheKey = this.getModelKey(modelPath, mtlPath);
+    console.log(`🔍 ModelCache: loadModel called for ${modelPath}, cacheKey: ${cacheKey}`);
     
     // Проверяем кеш
     const cached = this.modelCache.get(cacheKey);
+    console.log(`💾 ModelCache: Cache check result for ${cacheKey}:`, cached ? 'FOUND' : 'NOT FOUND');
     if (cached) {
+      console.log(`✅ Model loaded from cache: ${modelPath}`);
       // Клонируем объект для безопасного использования
       return cached.object.clone();
     }
@@ -149,6 +152,7 @@ class ModelCacheManager {
     // Проверяем, не загружается ли уже
     const existingPromise = this.loadingPromises.get(cacheKey);
     if (existingPromise) {
+      console.log(`⏳ Waiting for existing load: ${modelPath}`);
       const object = await existingPromise;
       return object.clone();
     }
@@ -169,10 +173,23 @@ class ModelCacheManager {
           }
         }
 
+        // Проверяем доступность файла модели
+        try {
+          const response = await fetch(modelPath, { method: 'HEAD' });
+          if (!response.ok) {
+            throw new Error(`Model file not found: ${modelPath} (${response.status})`);
+          }
+        } catch (fetchError) {
+          console.error(`❌ Model file check failed for ${modelPath}:`, fetchError);
+          throw new Error(`Model file not accessible: ${modelPath}`);
+        }
+
         // Загружаем модель
+        console.log(`🔄 Loading model: ${modelPath}`);
         objLoader.load(
           modelPath,
           (object) => {
+            console.log(`✅ Model loaded successfully: ${modelPath}`);
             // Если материалы не загрузились, применяем базовый материал
             if (!materials) {
               object.traverse((child) => {
@@ -193,8 +210,14 @@ class ModelCacheManager {
             this.cleanupCache(); // Очищаем старые записи
             resolve(object);
           },
-          undefined,
+          (progress) => {
+            if (progress.lengthComputable) {
+              const percentComplete = (progress.loaded / progress.total) * 100;
+              console.log(`📊 Loading progress for ${modelPath}: ${percentComplete.toFixed(1)}%`);
+            }
+          },
           (error) => {
+            console.error(`❌ Failed to load model ${modelPath}:`, error);
             this.loadingPromises.delete(cacheKey);
             reject(error);
           }
@@ -211,15 +234,19 @@ class ModelCacheManager {
 
   // Предзагрузка моделей
   async preloadModels(models: Array<{ modelPath: string; mtlPath?: string }>) {
+    console.log(`🚀 Starting preload of ${models.length} models`);
+    
     // Загружаем модели порциями для контроля нагрузки
     const batchSize = this.maxConcurrentLoads;
     const results = [];
     
     for (let i = 0; i < models.length; i += batchSize) {
       const batch = models.slice(i, i + batchSize);
+      console.log(`📦 Processing batch ${Math.floor(i/batchSize) + 1}/${Math.ceil(models.length/batchSize)} (${batch.length} models)`);
+      
       const batchPromises = batch.map(({ modelPath, mtlPath }) => 
         this.loadModel(modelPath, mtlPath).catch(error => {
-          console.warn(`Failed to preload model ${modelPath}:`, error);
+          console.warn(`⚠️ Failed to preload model ${modelPath}:`, error);
           return null;
         })
       );
@@ -227,11 +254,24 @@ class ModelCacheManager {
       const batchResults = await Promise.allSettled(batchPromises);
       results.push(...batchResults);
       
+      // Логируем результаты батча
+      const batchSuccessful = batchResults.filter(r => r.status === 'fulfilled').length;
+      const batchFailed = batchResults.filter(r => r.status === 'rejected').length;
+      console.log(`✅ Batch completed: ${batchSuccessful} successful, ${batchFailed} failed`);
+      
       // Небольшая пауза между батчами для снижения нагрузки
       if (i + batchSize < models.length) {
         await new Promise(resolve => setTimeout(resolve, 100));
       }
     }
+    
+    const totalSuccessful = results.filter(r => r.status === 'fulfilled').length;
+    const totalFailed = results.filter(r => r.status === 'rejected').length;
+    console.log(`🏁 Preload completed: ${totalSuccessful}/${models.length} models loaded successfully`);
+    
+    // Логируем состояние кеша после предзагрузки
+    const cacheInfo = this.getCacheInfo();
+    console.log(`📊 Cache state after preload:`, cacheInfo);
     
     return results;
   }
@@ -261,7 +301,7 @@ class ModelCacheManager {
 
   // Проверка наличия модели в кеше
   hasModel(modelPath: string, mtlPath?: string): boolean {
-    const cacheKey = `${modelPath}${mtlPath ? `|${mtlPath}` : ''}`;
+    const cacheKey = this.getModelKey(modelPath, mtlPath);
     return this.modelCache.has(cacheKey);
   }
 }

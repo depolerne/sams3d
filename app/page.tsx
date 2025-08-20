@@ -141,19 +141,49 @@ export default function Home() {
   const filteredItems = menuData ? 
     (menuData.categories.find(cat => cat.id === selectedCategory)?.items || []) : [];
 
-  // Предзагружаем модели при смене категории
+  // Предзагружаем все модели сразу после загрузки данных
+  useEffect(() => {
+    if (menuData) {
+      console.log(`🚀 Starting global preload of all models`);
+      
+      // Собираем все модели из всех категорий
+      const allModels: Array<{ modelPath: string; mtlPath?: string }> = [];
+      
+      menuData.categories.forEach(category => {
+        category.items.forEach(item => {
+          allModels.push({
+            modelPath: item.modelPath,
+            mtlPath: item.mtlPath
+          });
+        });
+      });
+      
+      console.log(`📦 Found ${allModels.length} models to preload globally`);
+      
+      // Предзагружаем все модели в фоне
+      modelCache.preloadModels(allModels)
+        .then((results) => {
+          const successful = results.filter(r => r.status === 'fulfilled').length;
+          const failed = results.filter(r => r.status === 'rejected').length;
+          console.log(`🎉 Global preload completed: ${successful} models loaded, ${failed} failed`);
+        })
+        .catch(error => {
+          console.error(`❌ Failed to preload models globally:`, error);
+        });
+    }
+  }, [menuData]);
+  
+  // Быстрое переключение категорий без дополнительной загрузки
   useEffect(() => {
     if (menuData && selectedCategory) {
-      const categoryItems = menuData.categories.find(cat => cat.id === selectedCategory)?.items || [];
-      const modelsToPreload = categoryItems.slice(0, 8).map(item => ({
-        modelPath: item.modelPath,
-        mtlPath: item.mtlPath
-      }));
+      console.log(`🔄 Switching to category: ${selectedCategory}`);
+      setCategoryLoading(true);
       
-      // Предзагружаем модели в фоне
-      modelCache.preloadModels(modelsToPreload).catch(error => {
-        console.warn('Failed to preload models for category:', selectedCategory, error);
-      });
+      // Просто переключаем категорию, модели уже предзагружены
+      setTimeout(() => {
+        setCategoryLoading(false);
+        console.log(`✅ Category ${selectedCategory} switched instantly`);
+      }, 100); // Минимальная задержка для плавности UI
     }
   }, [selectedCategory, menuData]);
 
@@ -321,8 +351,18 @@ export default function Home() {
           </div>
         </div>
 
+        {/* Category Loading Indicator */}
+        {categoryLoading && (
+          <div className="flex items-center justify-center py-12">
+            <div className="flex flex-col items-center space-y-4">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cyan-400"></div>
+              <p className="text-cyan-400 font-medium">Загрузка моделей категории...</p>
+            </div>
+          </div>
+        )}
+
         {/* Menu Items Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 ${categoryLoading ? 'opacity-50 pointer-events-none' : ''}`}>
           {filteredItems.map((item, index) => (
             <motion.div
               key={item.id}

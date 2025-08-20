@@ -88,12 +88,26 @@ export default function Model3DPreview({ modelPath, mtlPath, className = '' }: M
       
       modelRef.current = object;
       scene.add(object);
+      
+      console.log(`🎬 Model3DPreview: Model loaded, starting animation for ${modelPath}`);
+      
+      // Запускаем анимацию только после загрузки модели
+      startAnimation();
     };
 
     // Загружаем модель через кеш
     if (!modelPath) {
       console.error('Model path is required');
       return;
+    }
+
+    console.log(`🔍 Model3DPreview: Checking cache for ${modelPath}`);
+    
+    // Проверяем, есть ли модель в кеше
+    if (modelCache.hasModel(modelPath, mtlPath)) {
+      console.log(`💾 Model3DPreview: Found in cache ${modelPath}`);
+    } else {
+      console.log(`📥 Model3DPreview: Not in cache, will load ${modelPath}`);
     }
 
     // Используем кеш для загрузки модели
@@ -103,24 +117,31 @@ export default function Model3DPreview({ modelPath, mtlPath, className = '' }: M
         console.error('Error loading model from cache:', error);
       });
 
-    // Оптимизированная анимация с адаптивным FPS
-    let lastTime = 0;
-    const targetFPS = isMobile ? 30 : 60; // Снижаем FPS на мобильных
-    const frameInterval = 1000 / targetFPS;
-    
-    const animate = (currentTime: number) => {
-      if (currentTime - lastTime >= frameInterval) {
-        if (modelRef.current) {
-          modelRef.current.rotation.y += isMobile ? 0.008 : 0.01; // Медленнее на мобильных
-        }
-        
-        renderer.render(scene, camera);
-        lastTime = currentTime;
+    // Функция для запуска анимации
+    const startAnimation = () => {
+      if (animationIdRef.current) {
+        cancelAnimationFrame(animationIdRef.current);
       }
       
-      animationIdRef.current = requestAnimationFrame(animate);
+      // Оптимизированная анимация с адаптивным FPS
+      let lastTime = 0;
+      const targetFPS = isMobile ? 30 : 60; // Снижаем FPS на мобильных
+      const frameInterval = 1000 / targetFPS;
+      
+      const animate = (currentTime: number) => {
+        if (currentTime - lastTime >= frameInterval) {
+          if (modelRef.current) {
+            modelRef.current.rotation.y += isMobile ? 0.008 : 0.01; // Медленнее на мобильных
+          }
+          
+          renderer.render(scene, camera);
+          lastTime = currentTime;
+        }
+        
+        animationIdRef.current = requestAnimationFrame(animate);
+      };
+      animate(0);
     };
-    animate(0);
 
     // Обработка изменения размера
     const handleResize = () => {
